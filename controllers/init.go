@@ -13,6 +13,9 @@ import (
 
 var authService authServices.AuthService
 var restaurantService restaurantServices.RestaurantService
+var printerService restaurantServices.PrinterService
+var itemService restaurantServices.ItemService
+var tableService restaurantServices.TableService
 var router *gin.Engine
 
 func Init(addr ...string) {
@@ -36,10 +39,22 @@ func Init(addr ...string) {
 	}
 	authService = authServices.NewAuthService(db)
 	restaurantService = restaurantServices.NewRestaurantService(db)
+	printerService = restaurantServices.NewPrinterService(db)
+	itemService = restaurantServices.NewItemService(db)
+	tableService = restaurantServices.NewTableService(db)
 	router = gin.Default()
 	router.Use(authService.Auth())
 	router.Use(server.CorsMiddleware())
 	router.POST("/sessions", CreateSession)
 	router.POST("/restaurants", CreateRestaurant)
+	router.GET("/restaurants", ListRestaurant)
+	router.GET("/restaurants/:id", GetRestaurant)
+	router.POST("/restaurants/:id/items", CreateItem)
+	router.POST("/restaurants/:id/tables", CreateTable)
+	router.POST("/restaurants/:id/printers", CreatePrinter)
+	router.GET("/restaurants/:id/printers", ListPrinter)
+	router.DELETE("/printers/:id", DeletePrinter)
+	router.DELETE("/items/:id", DeleteItem)
+	router.DELETE("/tables/:id", DeleteTable)
 	router.Run(addr...)
 }

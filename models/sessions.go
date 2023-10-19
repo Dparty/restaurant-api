@@ -11,8 +11,3 @@ type Session struct {
 
 type Account struct {
 }
-
-type PutRestaurantRequest struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
-}

@@ -3,13 +3,14 @@ module github.com/Dparty/restaurant-api
 go 1.21.1
 
 require (
-	github.com/Dparty/auth-services v0.0.0-20231019074806-75e46f65a58f // indirect
+	github.com/Dparty/auth-services v0.0.0-20231019084611-7fb1cf0f0cea // indirect
 	github.com/Dparty/common v0.0.0-20230929033726-ff769bca8c94 // indirect
-	github.com/Dparty/dao v0.0.0-20231019065120-5af24f478ff1 // indirect
+	github.com/Dparty/dao v0.0.0-20231019142441-08362e29374c // indirect
 	github.com/Dparty/feieyun v0.0.0-20231009061625-f3e447980d9d // indirect
-	github.com/Dparty/restaurant-services v0.0.0-20231019040202-85eacf00c1e3 // indirect
+	github.com/Dparty/restaurant-services v0.0.0-20231019150213-6d1bd40f0143 // indirect
 	github.com/bwmarrin/snowflake v0.3.0 // indirect
 	github.com/bytedance/sonic v1.10.0-rc2 // indirect
+	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
 	github.com/chenzhuoyu/iasm v0.9.0 // indirect
 	github.com/clbanning/mxj v1.8.4 // indirect
