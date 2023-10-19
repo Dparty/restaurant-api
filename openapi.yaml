@@ -1,0 +1,995 @@
+openapi: 3.0.3
+info:
+  title: Dparty APIs
+  description: |-
+    Dparty
+  contact:
+    email: chenyunda218@gmail.com
+  version: 0.0.10
+servers:
+  - url: https://localhost/api/v1
+tags:
+  - name: Account
+  - name: Restaurant
+paths:
+  /account:
+    get:
+      tags:
+        - Account
+      description: Get account detail
+      operationId: GetAccount
+      responses:
+        '200':
+          description: Success get account detail
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+  /account/session:
+    post:
+      tags:
+        - Account
+      description: Create Login session
+      operationId: CreateSession
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSessionRequest'
+      responses:
+        '201':
+          description: 'Account created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+  /account/password:
+    put:
+      tags:
+        - Account
+      operationId: UpdatePassword
+      description: Update password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePasswordRequest'
+      responses:
+        '204':
+          description: 'Updated'
+  /accounts:
+    post:
+      tags:
+        - Account
+      description: Create user account
+      operationId: CreateAccount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAccountRequest'
+      responses:
+        '201':
+          description: 'Account created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+    get:
+      tags:
+        - Account
+      description: Create user account
+      operationId: ListAccount
+      parameters:
+        - $ref: '#/components/parameters/Ordering'
+        - $ref: '#/components/parameters/IndexParam'
+        - $ref: '#/components/parameters/LimitParam'
+      responses:
+        '200':
+          description: 'Account created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountList'
+  /restaurants:
+    post:
+      operationId: CreateRestaurant
+      tags:
+        - Restaurant
+      description: 'Create restaurant'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutRestaurantRequest'
+      responses:
+        '201':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+    get:
+      operationId: ListRestaurants
+      tags:
+        - Restaurant
+      description: 'List restaurants'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantList'
+  /restaurants/{id}:
+    put:
+      tags:
+        - Restaurant
+      operationId: UpdateRestaurant
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      description: 'Update restaurant'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutRestaurantRequest'
+      responses:
+        '200':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+    get:
+      tags:
+        - Restaurant
+      operationId: GetRestaurant
+      description: 'Create restaurant'
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+    delete:
+      tags:
+        - Restaurant
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      operationId: DeleteRestaurant
+      responses:
+        '204':
+          description: 'Deleted'
+  /restaurants/{id}/items:
+    post:
+      tags:
+        - Restaurant
+      description: 'Create restaurant'
+      operationId: CreateItem
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutItemRequest'
+      responses:
+        '201':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+    get:
+      tags:
+        - Restaurant
+      operationId: ListRestaurantItems
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: 'Items of restaurant'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemList'
+  /restaurants/{id}/printers:
+    post:
+      tags:
+        - Restaurant
+      operationId: CreatePrinter
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutPrinterRequest'
+      responses:
+        '201':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Printer'
+    get:
+      tags:
+        - Restaurant
+      operationId: ListPrinters
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: 'Success'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrinterList'
+  /printers/{id}:
+    put:
+      tags:
+        - Restaurant
+      operationId: UpdatePrinter
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutPrinterRequest'
+      responses:
+        '200':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutPrinterRequest'
+    delete:
+      tags:
+        - Restaurant
+      operationId: DeletePrinter
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '204':
+          description: 'Deleted'
+  /restaurants/{id}/tables:
+    post:
+      tags:
+        - Restaurant
+      operationId: CreateTable
+      description: 'Create restaurant'
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutTableRequest'
+      responses:
+        '201':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Table'
+        '409':
+          description: 'Duplicated'
+    get:
+      tags:
+        - Restaurant
+      operationId: ListRestaurantTable
+      description: 'List restaurants table'
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableList'
+  /tables/{id}:
+    get:
+      tags:
+        - Restaurant
+      operationId: GetTable
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Table'
+    put:
+      tags:
+        - Restaurant
+      operationId: UpdateTable
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      description: 'Update table'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutTableRequest'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Table'
+    delete:
+      tags:
+        - Restaurant
+      operationId: DeleteTable
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '204':
+          description: 'Deleted'
+  /tables/{id}/orders:
+    post:
+      tags:
+        - Restaurant
+      operationId: CreateBill
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBillRequest'
+      responses:
+        '201':
+          description: 'Created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bill'
+  /items/{id}:
+    get:
+      tags:
+        - Restaurant
+      operationId: GetItem
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: 'Updated'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+    put:
+      tags:
+        - Restaurant
+      operationId: UpdateItem
+      description: 'Create restaurant'
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutItemRequest'
+      responses:
+        '200':
+          description: 'Updated'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+    delete:
+      tags:
+        - Restaurant
+      operationId: DeleteItem
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '204':
+          description: 'Deleted'
+  /items/{id}/image:
+    post:
+      tags:
+        - Restaurant
+      operationId: UploadItemImage
+      description: 'Create update url'
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '201':
+          description: 'Updated'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Uploading'
+  /bills:
+    get:
+      tags: [Restaurant]
+      operationId: ListBills
+      parameters:
+        - in: query
+          name: restaurantId
+          schema:
+            type: string
+        - in: query
+          name: status
+          schema:
+            type: string
+        - in: query
+          name: startAt
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: endAt
+          schema:
+            type: integer
+            format: int64
+        - in: query
+          name: tableId
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Success'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bill'
+  /bills/{id}:
+    get:
+      tags: [Restaurant]
+      operationId: GetBill
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: 'Success'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bill'
+  /bills/{id}/finish:
+    put:
+      tags: [Restaurant]
+      operationId: FinishBill
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: 'Success'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bill'
+components:
+  schemas:
+    RestaurantsConfiguration:
+      type: object
+      properties:
+        width:
+          type: integer
+          format: int64
+        height:
+          type: integer
+          format: int64
+        tags:
+          type: array
+          items:
+            type: string
+    Restaurant:
+      type: object
+      description: 'Restaurant'
+      required:
+        - id
+        - name
+        - description
+        - items
+        - tags
+        - tables
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        items:
+          type: array
+          items: 
+            $ref: '#/components/schemas/Item'
+        tables:
+          type: array
+          items:
+            $ref: '#/components/schemas/Table'
+        tags:
+          type: array
+          items:
+            type: string
+    RestaurantList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Restaurant'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    PutRestaurantRequest:
+      type: object
+      description: 'Restaurant'
+      required:
+        - name
+        - description
+        - tags
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+    PrinterType:
+      type: string
+      enum: [BILL, KITCHEN]
+    PutPrinterRequest:
+      type: object
+      required:
+        - sn
+        - name
+        - description
+        - type
+      properties:
+        sn:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          $ref: '#/components/schemas/PrinterType'
+    Printer:
+      type: object
+      required:
+        - id
+        - sn
+        - name
+        - description
+        - type
+      properties:
+        id:
+          type: string
+        sn:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        type:
+          $ref: '#/components/schemas/PrinterType'
+    PrinterList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Printer'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    Table:
+      type: object
+      description: 'Table of restaurant'
+      required:
+        - id
+        - label
+        - y
+        - x
+      properties:
+        x:
+          type: integer
+          format: int64
+        y:
+          type: integer
+          format: int64
+        id:
+          type: string
+        label:
+          type: string
+    TableList:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Table'
+    PutTableRequest:
+      type: object
+      required:
+        - label
+        - x
+        - y
+      properties:
+        label:
+          type: string
+        x:
+          type: integer
+          format: int64
+        y:
+          type: integer
+          format: int64
+    Specification:
+      type: object
+      required:
+        - itemId
+        - options
+      properties:
+        itemId:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/Pair'
+    Order:
+      type: object
+      required:
+        - item
+        - options
+      properties:
+        item:
+          $ref: '#/components/schemas/Item'
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/Pair'
+    CreateBillRequest:
+      type: object
+      required:
+        - orders
+      properties:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Specification'
+    Pair:
+      type: object
+      required:
+        - left
+        - right
+      properties:
+        left:
+          type: string
+        right:
+          type: string
+    BillStatus:
+      type: string
+      enum: [SUBMITTED,PAIED]
+    Bill:
+      type: object
+      required:
+        - id
+        - status
+        - orders
+      properties:
+        id:
+          type: string
+        status:
+          $ref: '#/components/schemas/BillStatus'
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+    BillList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bill'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    Uploading:
+      type: object
+      required:
+        - url
+      properties:
+        url:
+          type: string
+    ItemList:
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    PutItemRequest:
+      type: object
+      required:
+        - name
+        - pricing
+        - attributes
+        - images
+        - tags
+        - printers
+      properties:
+        name:
+          type: string
+        pricing:
+          type: integer
+          format: int64
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+        images:
+          type: array
+          items:
+            type: string
+        tags:
+          type: array
+          items:
+            type: string
+        printers:
+          type: array
+          items:
+            type: string
+    Item:
+      type: object
+      description: 'Item'
+      required:
+        - id
+        - name
+        - pricing
+        - attributes
+        - images
+        - tags
+        - printers
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        pricing:
+          type: integer
+          format: int64
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+        images:
+          type: array
+          items:
+            type: string
+        tags:
+          type: array
+          items:
+            type: string
+        printers:
+          type: array
+          items:
+            type: string
+    Attribute:
+      type: object
+      required:
+        - label
+        - options
+      properties:
+        label:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/Option'
+    Option:
+      type: object
+      required:
+        - label
+        - extra
+      properties:
+        label:
+          type: string
+        extra:
+          type: integer
+          format: int64
+    SessionVerificationRequest:
+      description: 'Session verification request'
+      type: object
+      required:
+        - token
+      properties:
+        token:
+          type: string
+    CreateSessionRequest:
+      description: 'Login request'
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          minLength: 11
+          maxLength: 11
+        password:
+          type: string
+          minLength: 10
+          maxLength: 128
+    CreateAccountRequest:
+      description: 'Create account request schema'
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        verificationCode:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        role:
+          $ref: '#/components/schemas/Role'
+    Role:
+      type: string
+      enum: [ROOT, ADMIN, USER, SUB_ACCOUNT]
+    UpdatePasswordRequest:
+      type: object
+      required:
+        - password
+        - newPassword
+      properties:
+        password:
+          type: string
+        newPassword:
+          type: string
+    Account:
+      type: object
+      required:
+        - id
+        - email
+        - role
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        role:
+          $ref: '#/components/schemas/Role'
+    AccountList:
+      description: 'Account list'
+      type: object
+      required:
+        - data
+        - pagination
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+    Session:
+      type: object
+      required:
+        - account
+        - token
+        - tokenType
+        - tokenFormat
+        - expiredAt
+        - createdAt
+      properties:
+        account:
+          $ref: '#/components/schemas/Account'
+        token:
+          type: string
+        tokenType:
+          type: string
+          default: Bearer
+        tokenFormat:
+          type: string
+          default: jwt
+        expiredAt:
+          type: integer
+          format: int64
+        createdAt:
+          type: integer
+          format: int64
+    SessionStatus:
+      type: string
+      enum: ['ACTIVED', 'EXPIRED', 'DISACTIVED']
+    SessionVerification:
+      required:
+        - status
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/SessionStatus'
+    Ordering:
+      description: 'Ordering'
+      type: string
+      enum: [ASCENDING, DESCENDING]
+    Pagination:
+      description: 'Pagination'
+      type: object
+      required:
+        - index
+        - limit
+        - total
+      properties:
+        index:
+          type: integer
+          format: int64
+          description: 'Current page'
+        limit:
+          type: integer
+          format: int64
+          description: 'Amount per page'
+        total:
+          type: integer
+          format: int64
+          description: 'Total page'
+  parameters:
+    Ordering:
+      name: ordering
+      description: 'ASCENDING or DESCENDING'
+      in: query
+      schema:
+        $ref: '#/components/schemas/Ordering'
+    IndexParam:
+      name: index
+      in: query
+      description: 'Current page index'
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+    LimitParam:
+      name: limit
+      in: query
+      description: 'Total pages'
+      schema:
+        type: integer
+        minimum: 1
+        default: 10
+    ID:
+      in: path
+      name: id
+      schema:
+        type: string
+      required: true
+    StartAt:
+      in: query
+      name: startAt
+      schema:
+        type: integer
+        format: int64
+    EndAt:
+      in: query
+      name: endAt
+      schema:
+        type: integer
+        format: int64

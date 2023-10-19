@@ -1,0 +1,7 @@
+.env*
+.env.yaml
+go-sdk/
+boardware-cloud-ts-sdk/
+.DS_Store
+env.yaml
+config
