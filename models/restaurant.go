@@ -10,12 +10,11 @@ type PutRestaurantRequest struct {
 }
 
 type Restaurant struct {
-	Id          string   `json:"id"`
-	Name        string   `json:"name"`
-	Description string   `json:"description"`
-	Items       []Item   `json:"items"`
-	Tables      []Table  `json:"tables"`
-	Tags        []string `json:"tags"`
+	Id          string  `json:"id"`
+	Name        string  `json:"name"`
+	Description string  `json:"description"`
+	Items       []Item  `json:"items"`
+	Tables      []Table `json:"tables"`
 }
 
 type PutItemRequest struct {

@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/Dparty/common/fault"
@@ -188,4 +189,9 @@ func DeleteTable(ctx *gin.Context) {
 	}
 	table.Delete()
 	ctx.JSON(http.StatusNoContent, "")
+}
+
+func CreateOrder(ctx *gin.Context) {
+	tableId := ctx.Param("id")
+	fmt.Println(tableId)
 }

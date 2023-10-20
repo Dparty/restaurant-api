@@ -8,6 +8,13 @@ import (
 	"github.com/chenyunda218/golambda"
 )
 
+func arrayConvert[T any](array []T) []T {
+	if len(array) == 0 {
+		return make([]T, 0)
+	}
+	return array
+}
+
 func RestaurantConvert(restaurant serviceModels.Restaurant) apiModels.Restaurant {
 	return apiModels.Restaurant{
 		Id:          utils.UintToString(restaurant.ID()),
@@ -36,9 +43,9 @@ func ItemConvert(item serviceModels.Item) apiModels.Item {
 	return apiModels.Item{
 		Id:         utils.UintToString(item.ID()),
 		Name:       entity.Name,
-		Attributes: entity.Attributes,
-		Images:     entity.Images,
-		Tags:       entity.Tags,
+		Attributes: arrayConvert(entity.Attributes),
+		Images:     arrayConvert(entity.Images),
+		Tags:       arrayConvert(entity.Tags),
 		Printers: golambda.Map(entity.Printers, func(_ int, id uint) string {
 			return utils.UintToString(id)
 		}),
@@ -56,8 +63,8 @@ func ItemForward(item apiModels.PutItemRequest) model.Item {
 	return model.Item{
 		Name:       item.Name,
 		Pricing:    item.Pricing,
-		Attributes: item.Attributes,
-		Tags:       item.Tags,
+		Attributes: arrayConvert(item.Attributes),
+		Tags:       arrayConvert(item.Tags),
 		Printers: golambda.Map(item.Printers, func(_ int, printer string) uint {
 			return utils.StringToUint(printer)
 		}),

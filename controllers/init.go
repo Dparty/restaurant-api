@@ -56,5 +56,6 @@ func Init(addr ...string) {
 	router.DELETE("/printers/:id", DeletePrinter)
 	router.DELETE("/items/:id", DeleteItem)
 	router.DELETE("/tables/:id", DeleteTable)
+	router.POST("/tables/:id/orders", CreateOrder)
 	router.Run(addr...)
 }
