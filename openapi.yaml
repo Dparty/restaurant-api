@@ -12,85 +12,6 @@ tags:
   - name: Account
   - name: Restaurant
 paths:
-  /account:
-    get:
-      tags:
-        - Account
-      description: Get account detail
-      operationId: GetAccount
-      responses:
-        '200':
-          description: Success get account detail
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Account'
-  /account/session:
-    post:
-      tags:
-        - Account
-      description: Create Login session
-      operationId: CreateSession
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateSessionRequest'
-      responses:
-        '201':
-          description: 'Account created'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Session'
-  /account/password:
-    put:
-      tags:
-        - Account
-      operationId: UpdatePassword
-      description: Update password
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UpdatePasswordRequest'
-      responses:
-        '204':
-          description: 'Updated'
-  /accounts:
-    post:
-      tags:
-        - Account
-      description: Create user account
-      operationId: CreateAccount
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateAccountRequest'
-      responses:
-        '201':
-          description: 'Account created'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Account'
-    get:
-      tags:
-        - Account
-      description: Create user account
-      operationId: ListAccount
-      parameters:
-        - $ref: '#/components/parameters/Ordering'
-        - $ref: '#/components/parameters/IndexParam'
-        - $ref: '#/components/parameters/LimitParam'
-      responses:
-        '200':
-          description: 'Account created'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccountList'
   /restaurants:
     post:
       operationId: CreateRestaurant
@@ -257,42 +178,6 @@ paths:
       responses:
         '204':
           description: 'Deleted'
-  /restaurants/{id}/tables:
-    post:
-      tags:
-        - Restaurant
-      operationId: CreateTable
-      description: 'Create restaurant'
-      parameters:
-        - $ref: '#/components/parameters/ID'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PutTableRequest'
-      responses:
-        '201':
-          description: 'Success created'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Table'
-        '409':
-          description: 'Duplicated'
-    get:
-      tags:
-        - Restaurant
-      operationId: ListRestaurantTable
-      description: 'List restaurants table'
-      parameters:
-        - $ref: '#/components/parameters/ID'
-      responses:
-        '200':
-          description: 'Success created'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TableList'
   /tables/{id}:
     get:
       tags:
@@ -494,7 +379,6 @@ components:
         - name
         - description
         - items
-        - tags
         - tables
       properties:
         id:
@@ -511,38 +395,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Table'
-        tags:
-          type: array
-          items:
-            type: string
     RestaurantList:
-      type: object
-      required:
-        - data
-        - pagination
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Restaurant'
-        pagination:
-          $ref: '#/components/schemas/Pagination'
+      type: array
+      items:
+        $ref: '#/components/schemas/Restaurant'
     PutRestaurantRequest:
       type: object
       description: 'Restaurant'
       required:
         - name
         - description
-        - tags
       properties:
         name:
           type: string
         description:
           type: string
-        tags:
-          type: array
-          items:
-            type: string
     PrinterType:
       type: string
       enum: [BILL, KITCHEN]
@@ -582,17 +449,9 @@ components:
         type:
           $ref: '#/components/schemas/PrinterType'
     PrinterList:
-      type: object
-      required:
-        - data
-        - pagination
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Printer'
-        pagination:
-          $ref: '#/components/schemas/Pagination'
+      type: array
+      items:
+        $ref: '#/components/schemas/Printer'
     Table:
       type: object
       description: 'Table of restaurant'
@@ -612,13 +471,6 @@ components:
           type: string
         label:
           type: string
-    TableList:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Table'
     PutTableRequest:
       type: object
       required:
