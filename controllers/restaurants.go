@@ -209,3 +209,28 @@ func CreateOrder(ctx *gin.Context) {
 	ctx.ShouldBindJSON(&createBillRequest)
 	fmt.Println(createBillRequest)
 }
+
+func UploadItemCover(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		fault.GinHandler(ctx, fault.ErrUnauthorized)
+		return
+	}
+	itemId := ctx.Param("id")
+	item, err := itemService.GetById(utils.StringToUint(itemId))
+	if err != nil {
+		fault.GinHandler(ctx, err)
+		return
+	}
+
+	if item.Owner().Owner().ID() != account.ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+
+	file, _ := ctx.FormFile("file")
+	url := item.UploadImage(file)
+	ctx.JSON(http.StatusOK, gin.H{
+		"url": url,
+	})
+}

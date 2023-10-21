@@ -55,6 +55,7 @@ func Init(addr ...string) {
 	router.GET("/restaurants/:id/printers", ListPrinter)
 	router.DELETE("/printers/:id", DeletePrinter)
 	router.DELETE("/items/:id", DeleteItem)
+	router.PUT("/items/:id/images", UploadItemCover)
 	router.DELETE("/tables/:id", DeleteTable)
 	router.POST("/tables/:id/orders", CreateOrder)
 	router.Run(addr...)
