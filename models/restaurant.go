@@ -73,3 +73,27 @@ type Printer struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
 }
+
+type CreateBillRequest struct {
+	Specifications []Specification `json:"specifications"`
+}
+
+type Specification struct {
+	ItemId  string `json:"itemId"`
+	Options []Pair `json:"options"`
+}
+
+type Pair struct {
+	Left  string `json:"left"`
+	Right string `json:"right"`
+}
+
+type Order struct {
+	Item          Item   `json:"item"`
+	Specification []Pair `json:"specification"`
+}
+
+type Bill struct {
+	ID     string  `json:"id"`
+	Orders []Order `json:"orders"`
+}

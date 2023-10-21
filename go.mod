@@ -4,10 +4,10 @@ go 1.21.1
 
 require (
 	github.com/Dparty/auth-services v0.0.0-20231019084611-7fb1cf0f0cea // indirect
-	github.com/Dparty/common v0.0.0-20230929033726-ff769bca8c94 // indirect
-	github.com/Dparty/dao v0.0.0-20231019142441-08362e29374c // indirect
+	github.com/Dparty/common v0.0.0-20231021010642-807615a29e5c // indirect
+	github.com/Dparty/dao v0.0.0-20231021010055-2f539f0b6fd4 // indirect
 	github.com/Dparty/feieyun v0.0.0-20231009061625-f3e447980d9d // indirect
-	github.com/Dparty/restaurant-services v0.0.0-20231019150213-6d1bd40f0143 // indirect
+	github.com/Dparty/restaurant-services v0.0.0-20231021010921-7495b46f73cc // indirect
 	github.com/bwmarrin/snowflake v0.3.0 // indirect
 	github.com/bytedance/sonic v1.10.0-rc2 // indirect
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd // indirect

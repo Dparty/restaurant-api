@@ -35,7 +35,7 @@ func CreateItem(ctx *gin.Context) {
 	}
 	var putItemRequest apiModels.PutItemRequest
 	ctx.ShouldBindJSON(&putItemRequest)
-	item, _ := restaurant.CreateItem(putItemRequest.Name,
+	item, err := restaurant.CreateItem(putItemRequest.Name,
 		putItemRequest.Pricing,
 		putItemRequest.Attributes,
 		putItemRequest.Images,
@@ -44,6 +44,10 @@ func CreateItem(ctx *gin.Context) {
 			return utils.StringToUint(printerId)
 		}),
 	)
+	if err != nil {
+		fault.GinHandler(ctx, err)
+		return
+	}
 	ctx.JSON(http.StatusCreated, ItemConvert(item))
 }
 
@@ -131,9 +135,10 @@ func ListPrinter(ctx *gin.Context) {
 		fault.GinHandler(ctx, fault.ErrPermissionDenied)
 		return
 	}
-	ctx.JSON(http.StatusOK, golambda.Map(restaurant.Printers(), func(_ int, printer restaurantModels.Printer) apiModels.Printer {
-		return PrinterBackward(printer)
-	}))
+	ctx.JSON(http.StatusOK, golambda.Map(restaurant.Printers(),
+		func(_ int, printer restaurantModels.Printer) apiModels.Printer {
+			return PrinterBackward(printer)
+		}))
 }
 
 func DeletePrinter(ctx *gin.Context) {
@@ -150,7 +155,13 @@ func DeletePrinter(ctx *gin.Context) {
 		fault.GinHandler(ctx, fault.ErrPermissionDenied)
 		return
 	}
-	printer.Delete()
+	if !printer.Delete() {
+		ctx.JSON(http.StatusConflict, gin.H{
+			"code":    "60010",
+			"message": "printer is in using",
+		})
+		return
+	}
 	ctx.JSON(http.StatusNoContent, "")
 }
 
@@ -194,4 +205,7 @@ func DeleteTable(ctx *gin.Context) {
 func CreateOrder(ctx *gin.Context) {
 	tableId := ctx.Param("id")
 	fmt.Println(tableId)
+	var createBillRequest apiModels.CreateBillRequest
+	ctx.ShouldBindJSON(&createBillRequest)
+	fmt.Println(createBillRequest)
 }
