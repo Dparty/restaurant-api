@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/Dparty/common/fault"
@@ -204,10 +203,29 @@ func DeleteTable(ctx *gin.Context) {
 
 func CreateOrder(ctx *gin.Context) {
 	tableId := ctx.Param("id")
-	fmt.Println(tableId)
 	var createBillRequest apiModels.CreateBillRequest
 	ctx.ShouldBindJSON(&createBillRequest)
-	fmt.Println(createBillRequest)
+	table, err := tableService.GetById(utils.StringToUint(tableId))
+	if err != nil {
+		fault.GinHandler(ctx, err)
+		return
+	}
+	var specifications []restaurantModels.Specification
+	for _, specification := range createBillRequest.Specifications {
+		specifications = append(specifications, restaurantModels.Specification{
+			ItemId:  specification.ItemId,
+			Options: specification.Options,
+		})
+	}
+	bill, err := billService.CreateBill(*table, specifications)
+	if err != nil {
+		fault.GinHandler(ctx, err)
+		return
+	}
+	ctx.JSON(http.StatusCreated, apiModels.Bill{
+		ID:         utils.UintToString(bill.ID()),
+		PickUpCode: bill.PickUpCode(),
+	})
 }
 
 func UploadItemCover(ctx *gin.Context) {

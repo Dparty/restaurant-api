@@ -16,6 +16,7 @@ var restaurantService restaurantServices.RestaurantService
 var printerService restaurantServices.PrinterService
 var itemService restaurantServices.ItemService
 var tableService restaurantServices.TableService
+var billService restaurantServices.BillService
 var router *gin.Engine
 
 func Init(addr ...string) {
@@ -42,6 +43,7 @@ func Init(addr ...string) {
 	printerService = restaurantServices.NewPrinterService(db)
 	itemService = restaurantServices.NewItemService(db)
 	tableService = restaurantServices.NewTableService(db)
+	billService = restaurantServices.NewBillService(db)
 	router = gin.Default()
 	router.Use(authService.Auth())
 	router.Use(server.CorsMiddleware())

@@ -79,21 +79,17 @@ type CreateBillRequest struct {
 }
 
 type Specification struct {
-	ItemId  string `json:"itemId"`
-	Options []Pair `json:"options"`
-}
-
-type Pair struct {
-	Left  string `json:"left"`
-	Right string `json:"right"`
+	ItemId  string        `json:"itemId"`
+	Options []models.Pair `json:"options"`
 }
 
 type Order struct {
-	Item          Item   `json:"item"`
-	Specification []Pair `json:"specification"`
+	Item          Item          `json:"item"`
+	Specification []models.Pair `json:"specification"`
 }
 
 type Bill struct {
-	ID     string  `json:"id"`
-	Orders []Order `json:"orders"`
+	ID         string  `json:"id"`
+	Orders     []Order `json:"orders"`
+	PickUpCode int64   `json:"pickUpCode"`
 }
