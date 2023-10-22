@@ -12,9 +12,5 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
           script: |
-            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_NAME }}
-            # sudo docker stop ${{ vars.DOCKER_NAME }}-prd
-            # sudo docker rm ${{ vars.DOCKER_NAME }}-prd
-            sudo docker run -dp 8081:8080 --name ${{ vars.DOCKER_NAME }}-prd --mount type=bind,source="$(pwd)"/prd.env.yaml,target=/app/.env.yaml ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_NAME }}
+            sudo docker run -dp 9083:8080 --name ${{ vars.DOCKER_NAME }} --mount type=bind,source="$(pwd)"/uat.env.yaml,target=/app/.env.yaml ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_NAME }}
