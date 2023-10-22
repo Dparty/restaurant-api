@@ -11,7 +11,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func CreateRestaurant(ctx *gin.Context) {
+type RestaurantApi struct{}
+
+func (RestaurantApi) CreateRestaurant(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -22,7 +24,7 @@ func CreateRestaurant(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, RestaurantConvert(restaurant))
 }
 
-func CreateItem(ctx *gin.Context) {
+func (RestaurantApi) CreateItem(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -50,7 +52,7 @@ func CreateItem(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, ItemConvert(item))
 }
 
-func ListRestaurant(ctx *gin.Context) {
+func (RestaurantApi) ListRestaurant(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -63,7 +65,7 @@ func ListRestaurant(ctx *gin.Context) {
 		}))
 }
 
-func CreateTable(ctx *gin.Context) {
+func (RestaurantApi) CreateTable(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -87,7 +89,7 @@ func CreateTable(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, TableBackward(table))
 }
 
-func GetRestaurant(ctx *gin.Context) {
+func (RestaurantApi) GetRestaurant(ctx *gin.Context) {
 	restaurant, err := restaurantService.GetRestaurant(utils.StringToUint(ctx.Param("id")))
 	if err != nil {
 		fault.GinHandler(ctx, fault.ErrNotFound)
@@ -96,7 +98,7 @@ func GetRestaurant(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, RestaurantConvert(restaurant))
 }
 
-func CreatePrinter(ctx *gin.Context) {
+func (RestaurantApi) CreatePrinter(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -120,7 +122,7 @@ func CreatePrinter(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, PrinterBackward(table))
 }
 
-func ListPrinter(ctx *gin.Context) {
+func (RestaurantApi) ListPrinter(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -140,7 +142,7 @@ func ListPrinter(ctx *gin.Context) {
 		}))
 }
 
-func DeletePrinter(ctx *gin.Context) {
+func (RestaurantApi) DeletePrinter(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -164,7 +166,7 @@ func DeletePrinter(ctx *gin.Context) {
 	ctx.JSON(http.StatusNoContent, "")
 }
 
-func DeleteItem(ctx *gin.Context) {
+func (RestaurantApi) DeleteItem(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -183,7 +185,7 @@ func DeleteItem(ctx *gin.Context) {
 	ctx.JSON(http.StatusNoContent, "")
 }
 
-func DeleteTable(ctx *gin.Context) {
+func (RestaurantApi) DeleteTable(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		return
@@ -201,7 +203,7 @@ func DeleteTable(ctx *gin.Context) {
 	ctx.JSON(http.StatusNoContent, "")
 }
 
-func CreateOrder(ctx *gin.Context) {
+func (RestaurantApi) CreateOrder(ctx *gin.Context) {
 	tableId := ctx.Param("id")
 	var createBillRequest apiModels.CreateBillRequest
 	ctx.ShouldBindJSON(&createBillRequest)
@@ -228,7 +230,7 @@ func CreateOrder(ctx *gin.Context) {
 	})
 }
 
-func UploadItemCover(ctx *gin.Context) {
+func (RestaurantApi) UploadItemCover(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
 		fault.GinHandler(ctx, fault.ErrUnauthorized)

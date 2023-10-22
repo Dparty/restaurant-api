@@ -1,0 +1,17 @@
+name: run-docker
+
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update docker
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_NAME }}
+            sudo docker run -dp 8080:8080 --name ${{ vars.DOCKER_NAME }}-uat --mount type=bind,source="$(pwd)"/uat.env.yaml,target=/app/.env.yaml ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_NAME }}
