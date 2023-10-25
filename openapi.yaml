@@ -421,9 +421,12 @@ components:
           items:
             $ref: '#/components/schemas/Table'
     RestaurantList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Restaurant'
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Restaurant'
     PutRestaurantRequest:
       type: object
       description: 'Restaurant'

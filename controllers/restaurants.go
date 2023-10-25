@@ -60,10 +60,11 @@ func (RestaurantApi) ListRestaurant(ctx *gin.Context) {
 	}
 	accountId := account.ID()
 	restaurants := restaurantService.List(&accountId)
-	ctx.JSON(http.StatusOK, golambda.Map(restaurants,
-		func(_ int, restaurant restaurantModels.Restaurant) apiModels.Restaurant {
-			return RestaurantConvert(restaurant)
-		}))
+	ctx.JSON(http.StatusOK,
+		apiModels.RestaurantList{Data: golambda.Map(restaurants,
+			func(_ int, restaurant restaurantModels.Restaurant) apiModels.Restaurant {
+				return RestaurantConvert(restaurant)
+			})})
 }
 
 func (RestaurantApi) CreateTable(ctx *gin.Context) {

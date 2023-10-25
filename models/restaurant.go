@@ -98,3 +98,7 @@ type Bill struct {
 type PrintBillRequest struct {
 	Bills []string `json:"bills"`
 }
+
+type RestaurantList struct {
+	Data []Restaurant `json:"data"`
+}
