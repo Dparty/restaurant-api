@@ -5,7 +5,7 @@ info:
     Dparty
   contact:
     email: chenyunda218@gmail.com
-  version: 0.0.18
+  version: 0.0.19
 servers:
   - url: https://localhost/api/v1
 tags:
@@ -353,12 +353,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Bill'
-  /bills/{id}/finish:
     put:
       tags: [Restaurant]
       operationId: FinishBill
       parameters:
         - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBillStatusRequest'
       responses:
         '200':
           description: 'Success'
@@ -520,6 +524,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Pair'
+    UpdateBillStatusRequest:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          $ref: '#/components/schemas/BillStatus'
     CreateBillRequest:
       type: object
       required:
