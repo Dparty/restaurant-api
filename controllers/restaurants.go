@@ -53,6 +53,10 @@ func (RestaurantApi) CreateItem(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, ItemConvert(item))
 }
 
+func (RestaurantApi) UpdateItem(ctx *gin.Context) {
+
+}
+
 func (RestaurantApi) ListRestaurant(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
@@ -230,6 +234,15 @@ func (RestaurantApi) CreateOrder(ctx *gin.Context) {
 		ID:         utils.UintToString(bill.ID()),
 		PickUpCode: bill.PickUpCode(),
 	})
+}
+
+func (RestaurantApi) FinishOrder(ctx *gin.Context) {
+	tableId := ctx.Param("id")
+	table, err := tableService.GetById(utils.StringToUint(tableId))
+	if err != nil {
+		return
+	}
+	table.Finish()
 }
 
 func (RestaurantApi) UploadItemCover(ctx *gin.Context) {
