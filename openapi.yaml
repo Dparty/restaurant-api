@@ -5,7 +5,7 @@ info:
     Dparty
   contact:
     email: chenyunda218@gmail.com
-  version: 0.0.10
+  version: 0.0.11
 servers:
   - url: https://localhost/api/v1
 tags:
@@ -667,119 +667,6 @@ components:
         extra:
           type: integer
           format: int64
-    SessionVerificationRequest:
-      description: 'Session verification request'
-      type: object
-      required:
-        - token
-      properties:
-        token:
-          type: string
-    CreateSessionRequest:
-      description: 'Login request'
-      type: object
-      required:
-        - email
-        - password
-      properties:
-        email:
-          type: string
-          minLength: 11
-          maxLength: 11
-        password:
-          type: string
-          minLength: 10
-          maxLength: 128
-    CreateAccountRequest:
-      description: 'Create account request schema'
-      required:
-        - email
-        - password
-      type: object
-      properties:
-        verificationCode:
-          type: string
-        email:
-          type: string
-        password:
-          type: string
-        role:
-          $ref: '#/components/schemas/Role'
-    Role:
-      type: string
-      enum: [ROOT, ADMIN, USER, SUB_ACCOUNT]
-    UpdatePasswordRequest:
-      type: object
-      required:
-        - password
-        - newPassword
-      properties:
-        password:
-          type: string
-        newPassword:
-          type: string
-    Account:
-      type: object
-      required:
-        - id
-        - email
-        - role
-      properties:
-        id:
-          type: string
-        email:
-          type: string
-        role:
-          $ref: '#/components/schemas/Role'
-    AccountList:
-      description: 'Account list'
-      type: object
-      required:
-        - data
-        - pagination
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        pagination:
-          $ref: '#/components/schemas/Pagination'
-    Session:
-      type: object
-      required:
-        - account
-        - token
-        - tokenType
-        - tokenFormat
-        - expiredAt
-        - createdAt
-      properties:
-        account:
-          $ref: '#/components/schemas/Account'
-        token:
-          type: string
-        tokenType:
-          type: string
-          default: Bearer
-        tokenFormat:
-          type: string
-          default: jwt
-        expiredAt:
-          type: integer
-          format: int64
-        createdAt:
-          type: integer
-          format: int64
-    SessionStatus:
-      type: string
-      enum: ['ACTIVED', 'EXPIRED', 'DISACTIVED']
-    SessionVerification:
-      required:
-        - status
-      type: object
-      properties:
-        status:
-          $ref: '#/components/schemas/SessionStatus'
     Ordering:
       description: 'Ordering'
       type: string

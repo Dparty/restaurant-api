@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  generate-angular-client:
+    runs-on: ubuntu-latest
+    name: Publish SDK
+    steps:
+      # Checkout your code
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate Typescript Client
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          openapi-file: openapi.yaml
+          generator: typescript-fetch
+          config-file: openapi-ts-config.yml
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: "https://registry.npmjs.org"
+          scope: "@dparty"
+      - name: Publish
+        run: |
+          cd typescript-fetch-client
+          npm version `npm view ${{ vars.NPM_PACKAGE }} version` --no-git-tag-version
+          npm version --preid=alpha prerelease --no-git-tag-version
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
