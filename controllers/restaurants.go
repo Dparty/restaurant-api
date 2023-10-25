@@ -297,6 +297,11 @@ func (RestaurantApi) ListBills(ctx *gin.Context) {
 			return BillBackward(bill)
 		}))
 }
+
+func (RestaurantApi) PrintBill(ctx *gin.Context) {
+
+}
+
 func (RestaurantApi) GetBill(ctx *gin.Context) {
 
 }

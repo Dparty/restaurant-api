@@ -94,3 +94,7 @@ type Bill struct {
 	PickUpCode int64   `json:"pickUpCode"`
 	Status     string  `json:"status"`
 }
+
+type PrintBillRequest struct {
+	Bills []string `json:"bills"`
+}

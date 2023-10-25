@@ -5,7 +5,7 @@ info:
     Dparty
   contact:
     email: chenyunda218@gmail.com
-  version: 0.0.19
+  version: 0.0.20
 servers:
   - url: https://localhost/api/v1
 tags:
@@ -304,7 +304,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Uploading'
+                $ref: '#/components/schemas/UploadImageRespones'
   /bills:
     get:
       tags: [Restaurant]
@@ -355,7 +355,7 @@ paths:
                 $ref: '#/components/schemas/Bill'
     put:
       tags: [Restaurant]
-      operationId: FinishBill
+      operationId: UpdateBillStatus
       parameters:
         - $ref: '#/components/parameters/ID'
       requestBody:
@@ -370,6 +370,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Bill'
+  /bills/print:
+    post:
+      tags: [Restaurant]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrintBillRequest'
+      responses:
+        '204':
+          description: Success
 components:
   schemas:
     RestaurantsConfiguration:
@@ -550,6 +561,13 @@ components:
           type: string
         right:
           type: string
+    PrintBillRequest:
+      type: object
+      properties:
+        bills:
+          type: array
+          items: 
+            $ref: '#/components/schemas/Bill'
     BillStatus:
       type: string
       enum: [SUBMITTED,PAIED]
@@ -580,7 +598,7 @@ components:
             $ref: '#/components/schemas/Bill'
         pagination:
           $ref: '#/components/schemas/Pagination'
-    Uploading:
+    UploadImageRespones:
       type: object
       required:
         - url
