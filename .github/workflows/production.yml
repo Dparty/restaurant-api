@@ -13,4 +13,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
+            sudo docker stop ${{ vars.DOCKER_NAME }}
+            sudo docker rm ${{ vars.DOCKER_NAME }}
             sudo docker run -dp 9083:8080 --name ${{ vars.DOCKER_NAME }} --mount type=bind,source="$(pwd)"/prd.env.yaml,target=/app/.env.yaml ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_NAME }}
