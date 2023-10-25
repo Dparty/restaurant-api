@@ -80,3 +80,11 @@ func PrinterBackward(printer serviceModels.Printer) apiModels.Printer {
 		Description: printer.Description(),
 	}
 }
+
+func BillBackward(bill serviceModels.Bill) apiModels.Bill {
+	return apiModels.Bill{
+		Status:     bill.Entity().Status,
+		ID:         utils.UintToString(bill.ID()),
+		PickUpCode: bill.PickUpCode(),
+	}
+}

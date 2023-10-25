@@ -94,6 +94,8 @@ github.com/Dparty/dao v0.0.0-20231021083913-86a02d05760a h1:C7RcTPdeHEH/MgayH7vV
 github.com/Dparty/dao v0.0.0-20231021083913-86a02d05760a/go.mod h1:+cAVzOv1QXZxvKFCzsRYk/brdzYpIku9ycu2CYPQOPA=
 github.com/Dparty/dao v0.0.0-20231021084520-d882f5265c12 h1:595mSdU4yFmGuVahtsBnEqQOnpEmFGzfb7FIBntt/og=
 github.com/Dparty/dao v0.0.0-20231021084520-d882f5265c12/go.mod h1:+cAVzOv1QXZxvKFCzsRYk/brdzYpIku9ycu2CYPQOPA=
+github.com/Dparty/dao v0.0.0-20231025055109-f082f771b6f9 h1:xkkWbH44zBNXmh6dQ99mDUXc3VpCrcm/4ihhIQ7d5Kw=
+github.com/Dparty/dao v0.0.0-20231025055109-f082f771b6f9/go.mod h1:+cAVzOv1QXZxvKFCzsRYk/brdzYpIku9ycu2CYPQOPA=
 github.com/Dparty/feieyun v0.0.0-20231009061625-f3e447980d9d h1:6OSExguvC883VsAbkrozEdMrRwNQtbTlN4eBFkQB630=
 github.com/Dparty/feieyun v0.0.0-20231009061625-f3e447980d9d/go.mod h1:MRJeY/NuyVojLTIm2DymDcP4ryYPqcESMOdYUCoXSjA=
 github.com/Dparty/restaurant-services v0.0.0-20231019040202-85eacf00c1e3 h1:7GbbKSw363fdpYZ8sX6AdtqQDpN3fLuYFZe4l5M01dA=
@@ -166,6 +168,10 @@ github.com/Dparty/restaurant-services v0.0.0-20231022021923-51852dbe6c27 h1:S2II
 github.com/Dparty/restaurant-services v0.0.0-20231022021923-51852dbe6c27/go.mod h1:Ox+F5j02LhwsTXobxO+7EZgwBxW/BfOoQOCrk+DPwj8=
 github.com/Dparty/restaurant-services v0.0.0-20231025025740-1cac8ea59bc5 h1:mIW1gpaF1hC27ULIp9cbyyja8QqUv405vcHe0EpRQq8=
 github.com/Dparty/restaurant-services v0.0.0-20231025025740-1cac8ea59bc5/go.mod h1:CYHQrxfBdFAAWIoQqTdZqm5U2VRZs/uDUqGseRH33P4=
+github.com/Dparty/restaurant-services v0.0.0-20231025061333-6652e70f594e h1:RKFQ7Hgv7Ip087GqMCHH7bf3YTb6UCtEWfVeLQvuOWk=
+github.com/Dparty/restaurant-services v0.0.0-20231025061333-6652e70f594e/go.mod h1:/8csPdt28DWufwXrw8UsOeMbDGilvxTRAjIddciVsfk=
+github.com/Dparty/restaurant-services v0.0.0-20231025065644-a94a03e56ab8 h1:IuOHL2OPKARyxKqFLNeMTQcQkrDLCSEOkRkgXQvzVqE=
+github.com/Dparty/restaurant-services v0.0.0-20231025065644-a94a03e56ab8/go.mod h1:/8csPdt28DWufwXrw8UsOeMbDGilvxTRAjIddciVsfk=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/bwmarrin/snowflake v0.3.0 h1:xm67bEhkKh6ij1790JB83OujPR5CzNe8QuQqAgISZN0=
 github.com/bwmarrin/snowflake v0.3.0/go.mod h1:NdZxfVWX+oR6y2K0o6qAYv6gIOP9rjG0/E9WsDpxqwE=

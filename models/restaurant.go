@@ -92,4 +92,5 @@ type Bill struct {
 	ID         string  `json:"id"`
 	Orders     []Order `json:"orders"`
 	PickUpCode int64   `json:"pickUpCode"`
+	Status     string  `json:"status"`
 }

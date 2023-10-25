@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/Dparty/common/fault"
 	"github.com/Dparty/common/utils"
@@ -253,4 +254,46 @@ func (RestaurantApi) UploadItemCover(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"url": url,
 	})
+}
+
+func (RestaurantApi) ListBills(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	restaurantId := ctx.Query("restaurantId")
+	restaurant, err := restaurantService.GetRestaurant(utils.StringToUint(restaurantId))
+	if err != nil {
+		fault.GinHandler(ctx, fault.ErrNotFound)
+		return
+	}
+	if account.ID() != restaurant.Owner().ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+	tableId := ctx.Query("tableId")
+	status := ctx.Query("status")
+	startAt := ctx.Query("startAt")
+	endAt := ctx.Query("endAt")
+	var _tableId *uint
+	if tableId != "" {
+		_tableId = golambda.Reference(utils.StringToUint(tableId))
+	}
+	var _status *string
+	if status != "" {
+		_status = &status
+	}
+	var _startAt *time.Time
+	if startAt != "" {
+		_startAt = golambda.Reference(time.Unix(int64(utils.StringToUint(startAt)), 0))
+	}
+	var _endAt *time.Time
+	if endAt != "" {
+		_endAt = golambda.Reference(time.Unix(int64(utils.StringToUint(endAt)), 0))
+	}
+	bills := billService.ListBills(utils.StringToUint(restaurantId), _tableId, _status, _startAt, _endAt)
+	ctx.JSON(http.StatusOK, golambda.Map(bills,
+		func(_ int, bill restaurantModels.Bill) apiModels.Bill {
+			return BillBackward(bill)
+		}))
 }
