@@ -237,12 +237,37 @@ func (RestaurantApi) CreateOrder(ctx *gin.Context) {
 }
 
 func (RestaurantApi) FinishOrder(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
 	tableId := ctx.Param("id")
 	table, err := tableService.GetById(utils.StringToUint(tableId))
 	if err != nil {
 		return
 	}
+	if table.Owner().Owner().ID() != account.ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
 	table.Finish()
+}
+
+func (RestaurantApi) PrintBill(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	tableId := ctx.Param("id")
+	table, err := tableService.GetById(utils.StringToUint(tableId))
+	if table.Owner().Owner().ID() != account.ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+	if err != nil {
+		return
+	}
+	table.PrintBills()
 }
 
 func (RestaurantApi) UploadItemCover(ctx *gin.Context) {
@@ -310,10 +335,6 @@ func (RestaurantApi) ListBills(ctx *gin.Context) {
 		func(_ int, bill restaurantModels.Bill) apiModels.Bill {
 			return BillBackward(bill)
 		}))
-}
-
-func (RestaurantApi) PrintBill(ctx *gin.Context) {
-
 }
 
 func (RestaurantApi) GetBill(ctx *gin.Context) {
