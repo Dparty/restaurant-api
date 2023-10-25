@@ -5,7 +5,7 @@ info:
     Dparty
   contact:
     email: chenyunda218@gmail.com
-  version: 0.0.17
+  version: 0.0.18
 servers:
   - url: https://localhost/api/v1
 tags:
@@ -282,13 +282,22 @@ paths:
         '204':
           description: 'Deleted'
   /items/{id}/image:
-    post:
+    put:
       tags:
         - Restaurant
       operationId: UploadItemImage
       description: 'Create update url'
       parameters:
         - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
       responses:
         '201':
           description: 'Updated'
