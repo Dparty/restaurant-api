@@ -390,17 +390,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Bill'
-  /bills/print:
-    post:
-      tags: [Restaurant]
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PrintBillRequest'
-      responses:
-        '204':
-          description: Success
 components:
   schemas:
     RestaurantsConfiguration:
@@ -584,13 +573,7 @@ components:
           type: string
         right:
           type: string
-    PrintBillRequest:
-      type: object
-      properties:
-        bills:
-          type: array
-          items: 
-            $ref: '#/components/schemas/Bill'
+    
     BillStatus:
       type: string
       enum: [SUBMITTED,PAIED]
