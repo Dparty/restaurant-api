@@ -250,7 +250,9 @@ func (RestaurantApi) FinishOrder(ctx *gin.Context) {
 		fault.GinHandler(ctx, fault.ErrPermissionDenied)
 		return
 	}
-	table.Finish()
+	var printBillRequest apiModels.PrintBillRequest
+	ctx.ShouldBindJSON(&printBillRequest)
+	table.Finish(printBillRequest.Offset)
 }
 
 func (RestaurantApi) PrintBill(ctx *gin.Context) {
@@ -267,7 +269,9 @@ func (RestaurantApi) PrintBill(ctx *gin.Context) {
 	if err != nil {
 		return
 	}
-	table.PrintBills()
+	var printBillRequest apiModels.PrintBillRequest
+	ctx.ShouldBindJSON(&printBillRequest)
+	table.PrintBills(printBillRequest.Offset)
 }
 
 func (RestaurantApi) UploadItemCover(ctx *gin.Context) {

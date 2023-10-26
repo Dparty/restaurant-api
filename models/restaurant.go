@@ -96,7 +96,7 @@ type Bill struct {
 }
 
 type PrintBillRequest struct {
-	Bills []string `json:"bills"`
+	Offset int64 `json:"offset"`
 }
 
 type RestaurantList struct {
