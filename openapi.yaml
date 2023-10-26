@@ -239,7 +239,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Bill'
-  /tables/:id/print:
+  /tables/{id}/print:
     post:
       tags:
         - Restaurant
@@ -249,7 +249,7 @@ paths:
       responses:
         '200':
           description: 'Created'
-  /tables/:id/finish:
+  /tables/{id}/finish:
     put:
       tags:
         - Restaurant
