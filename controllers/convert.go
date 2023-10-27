@@ -86,5 +86,11 @@ func BillBackward(bill serviceModels.Bill) apiModels.Bill {
 		Status:     bill.Entity().Status,
 		ID:         utils.UintToString(bill.ID()),
 		PickUpCode: bill.PickUpCode(),
+		Orders: golambda.Map(bill.Orders(), func(_ int, order model.Order) apiModels.Order {
+			return apiModels.Order{
+				Item:          ItemConvert(serviceModels.NewItem(order.Item)),
+				Specification: order.Specification,
+			}
+		}),
 	}
 }
