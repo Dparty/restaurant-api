@@ -43,6 +43,7 @@ func ItemConvert(item serviceModels.Item) apiModels.Item {
 	return apiModels.Item{
 		Id:         utils.UintToString(item.ID()),
 		Name:       entity.Name,
+		Pricing:    item.Entity().Pricing,
 		Attributes: arrayConvert(entity.Attributes),
 		Images:     arrayConvert(entity.Images),
 		Tags:       arrayConvert(entity.Tags),
