@@ -372,6 +372,18 @@ paths:
       responses:
         '200':
           description: 'Success'
+  /bills/set:
+    post:
+      tags: [Restaurant]
+      operationId: SetBills
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetBillsRequest'
+      responses:
+        '200':
+          description: 'Success'
   /bills/{id}:
     get:
       tags: [Restaurant]
