@@ -206,6 +206,10 @@ github.com/Dparty/restaurant-services v0.0.0-20231026013724-98ac49e2b6b2 h1:EWEZ
 github.com/Dparty/restaurant-services v0.0.0-20231026013724-98ac49e2b6b2/go.mod h1:KJx8nSwcULVee2s3O9rjMt61c8hrNOX1hGVh1hhhkEs=
 github.com/Dparty/restaurant-services v0.0.0-20231026014022-df7eb70bb7a6 h1:ZRLBXcOYTSAkxohZoqTX7b3bvTVmYxNgjLqUTs0TP40=
 github.com/Dparty/restaurant-services v0.0.0-20231026014022-df7eb70bb7a6/go.mod h1:KJx8nSwcULVee2s3O9rjMt61c8hrNOX1hGVh1hhhkEs=
+github.com/Dparty/restaurant-services v0.0.0-20231027083807-e498d4c3c2a8 h1:DFQRWNuuAUGlPHHBev7NSUJMbHjlGyR2H0/D0DCU9EQ=
+github.com/Dparty/restaurant-services v0.0.0-20231027083807-e498d4c3c2a8/go.mod h1:KJx8nSwcULVee2s3O9rjMt61c8hrNOX1hGVh1hhhkEs=
+github.com/Dparty/restaurant-services v0.0.0-20231029094418-c9298291fa54 h1:JJ6shF/fjGTtAZAV+9nRpHRcBNDsnqORq6mJuhsiH4Y=
+github.com/Dparty/restaurant-services v0.0.0-20231029094418-c9298291fa54/go.mod h1:KJx8nSwcULVee2s3O9rjMt61c8hrNOX1hGVh1hhhkEs=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/bwmarrin/snowflake v0.3.0 h1:xm67bEhkKh6ij1790JB83OujPR5CzNe8QuQqAgISZN0=
 github.com/bwmarrin/snowflake v0.3.0/go.mod h1:NdZxfVWX+oR6y2K0o6qAYv6gIOP9rjG0/E9WsDpxqwE=

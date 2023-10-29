@@ -274,6 +274,54 @@ func (RestaurantApi) PrintBill(ctx *gin.Context) {
 	table.PrintBills(printBillRequest.Offset)
 }
 
+func (RestaurantApi) PrintBills(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	tableId := ctx.Param("id")
+	table, err := tableService.GetById(utils.StringToUint(tableId))
+
+	if table.Owner().Owner().ID() != account.ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+	if err != nil {
+		return
+	}
+	var printBillRequest apiModels.PrintBillsRequest
+	ctx.ShouldBindJSON(&printBillRequest)
+	billService.PrintBills(account.ID(),
+		golambda.Map(printBillRequest.BillIdList,
+			func(_ int, id string) uint {
+				return utils.StringToUint(id)
+			}), printBillRequest.Offset)
+}
+
+func (RestaurantApi) SetBills(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	tableId := ctx.Param("id")
+	table, err := tableService.GetById(utils.StringToUint(tableId))
+
+	if table.Owner().Owner().ID() != account.ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+	if err != nil {
+		return
+	}
+	var setBillRequest apiModels.SetBillsRequest
+	ctx.ShouldBindJSON(&setBillRequest)
+	billService.SetBill(account.ID(),
+		golambda.Map(setBillRequest.BillIdList,
+			func(_ int, id string) uint {
+				return utils.StringToUint(id)
+			}), setBillRequest.Offset, setBillRequest.Status)
+}
+
 func (RestaurantApi) UploadItemCover(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {

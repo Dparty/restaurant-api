@@ -8,6 +8,3 @@ type CreateSessionRequest struct {
 type Session struct {
 	Token string `json:"token"`
 }
-
-type Account struct {
-}

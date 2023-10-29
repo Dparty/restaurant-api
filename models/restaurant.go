@@ -102,3 +102,14 @@ type PrintBillRequest struct {
 type RestaurantList struct {
 	Data []Restaurant `json:"data"`
 }
+
+type PrintBillsRequest struct {
+	Offset     int64    `json:"offset"`
+	BillIdList []string `json:"billIdList"`
+}
+
+type SetBillsRequest struct {
+	Offset     int64    `json:"offset"`
+	BillIdList []string `json:"billIdList"`
+	Status     string   `json:"status"`
+}

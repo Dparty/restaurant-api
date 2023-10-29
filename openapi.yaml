@@ -360,6 +360,18 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Bill'
+  /bills/print:
+    post:
+      tags: [Restaurant]
+      operationId: PrintBIlls
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutItemRequest'
+      responses:
+        '200':
+          description: 'Success'
   /bills/{id}:
     get:
       tags: [Restaurant]
@@ -623,6 +635,35 @@ components:
             $ref: '#/components/schemas/Item'
         pagination:
           $ref: '#/components/schemas/Pagination'
+    PrintBillsRequest:
+      type: object
+      required:
+        - offset
+        - billIdList
+      properties:
+        offset:
+          type: integer
+          format: int64
+        billIdList:
+          type: array
+          items:
+            type: string
+    SetBillsRequest:
+      type: object
+      required:
+        - offset
+        - billIdList
+        - status
+      properties:
+        offset:
+          type: integer
+          format: int64
+        billIdList:
+          type: array
+          items:
+            type: string
+        status:
+          $ref: '#/components/schemas/BillStatus'
     PutItemRequest:
       type: object
       required:

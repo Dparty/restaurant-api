@@ -65,6 +65,8 @@ func Init(addr ...string) {
 	router.POST("/tables/:id/print", restaurantApi.PrintBill)
 	router.PUT("/tables/:id/finish", restaurantApi.FinishOrder)
 	router.GET("/bills", restaurantApi.ListBills)
+	router.POST("/bills/print", restaurantApi.PrintBills)
+	router.POST("/bills/set", restaurantApi.SetBills)
 	router.GET("/bills/:id", restaurantApi.GetBill)
 	router.PUT("/bills/:id", restaurantApi.UpdateBillStatus)
 	router.Run(addr...)
