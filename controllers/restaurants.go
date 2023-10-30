@@ -213,6 +213,13 @@ func (RestaurantApi) CreateOrder(ctx *gin.Context) {
 	tableId := ctx.Param("id")
 	var createBillRequest apiModels.CreateBillRequest
 	ctx.ShouldBindJSON(&createBillRequest)
+	if len(createBillRequest.Specifications) == 0 {
+		ctx.JSON(http.StatusBadRequest, gin.H{
+			"message": "No Specifications",
+			"code":    "70001",
+		})
+		return
+	}
 	table, err := tableService.GetById(utils.StringToUint(tableId))
 	if err != nil {
 		fault.GinHandler(ctx, err)
