@@ -98,6 +98,8 @@ github.com/Dparty/dao v0.0.0-20231025055109-f082f771b6f9 h1:xkkWbH44zBNXmh6dQ99m
 github.com/Dparty/dao v0.0.0-20231025055109-f082f771b6f9/go.mod h1:+cAVzOv1QXZxvKFCzsRYk/brdzYpIku9ycu2CYPQOPA=
 github.com/Dparty/dao v0.0.0-20231026013631-4d06352ad345 h1:REw6o4lt/r0JICIsNEXG52tc16POsgjnNC6/hYnqQYQ=
 github.com/Dparty/dao v0.0.0-20231026013631-4d06352ad345/go.mod h1:+cAVzOv1QXZxvKFCzsRYk/brdzYpIku9ycu2CYPQOPA=
+github.com/Dparty/dao v0.0.0-20231030083246-054b387ede82 h1:fVA/vn/PP9e5m8aCovav9jBV0aipnmJfbxdFI6oTUFw=
+github.com/Dparty/dao v0.0.0-20231030083246-054b387ede82/go.mod h1:+cAVzOv1QXZxvKFCzsRYk/brdzYpIku9ycu2CYPQOPA=
 github.com/Dparty/feieyun v0.0.0-20231009061625-f3e447980d9d h1:6OSExguvC883VsAbkrozEdMrRwNQtbTlN4eBFkQB630=
 github.com/Dparty/feieyun v0.0.0-20231009061625-f3e447980d9d/go.mod h1:MRJeY/NuyVojLTIm2DymDcP4ryYPqcESMOdYUCoXSjA=
 github.com/Dparty/feieyun v0.0.0-20231030073518-44e79b201c5a h1:jhE3sjzruuHkEmwHAuKlfsIpm+l8A7n4n2WDLXNJDlk=
@@ -224,6 +226,8 @@ github.com/Dparty/restaurant-services v0.0.0-20231030073047-9979cb2cd731 h1:3p4U
 github.com/Dparty/restaurant-services v0.0.0-20231030073047-9979cb2cd731/go.mod h1:KJx8nSwcULVee2s3O9rjMt61c8hrNOX1hGVh1hhhkEs=
 github.com/Dparty/restaurant-services v0.0.0-20231030073613-4055b24f2049 h1:26sBkUlS5rFU8YWyedZb3SbfRHrbLiBt0UwJV87uVjI=
 github.com/Dparty/restaurant-services v0.0.0-20231030073613-4055b24f2049/go.mod h1:v93YplJb1tXhOYLek5IEwGFLl5VYsGULiTErEmhI7Ac=
+github.com/Dparty/restaurant-services v0.0.0-20231030083342-d47fbfed9491 h1:me79gtw0ID1xIzJqS43qDt6J3cST3HEPX8RcYK6piwk=
+github.com/Dparty/restaurant-services v0.0.0-20231030083342-d47fbfed9491/go.mod h1:Ibt3wDs5UmtHydvMbzJRd4RU7hqTf7vG7B+xqSp5YUM=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/bwmarrin/snowflake v0.3.0 h1:xm67bEhkKh6ij1790JB83OujPR5CzNe8QuQqAgISZN0=
 github.com/bwmarrin/snowflake v0.3.0/go.mod h1:NdZxfVWX+oR6y2K0o6qAYv6gIOP9rjG0/E9WsDpxqwE=
