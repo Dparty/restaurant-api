@@ -583,9 +583,9 @@ components:
     CreateBillRequest:
       type: object
       required:
-        - orders
+        - specifications
       properties:
-        orders:
+        specifications:
           type: array
           items:
             $ref: '#/components/schemas/Specification'
