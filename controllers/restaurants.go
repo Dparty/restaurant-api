@@ -12,6 +12,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+var DEFAULT_OFFSET = 10
+
 type RestaurantApi struct{}
 
 func (RestaurantApi) CreateRestaurant(ctx *gin.Context) {
@@ -232,7 +234,7 @@ func (RestaurantApi) CreateOrder(ctx *gin.Context) {
 			Options: specification.Options,
 		})
 	}
-	bill, err := billService.CreateBill(*table, specifications)
+	bill, err := billService.CreateBill(*table, specifications, int64(DEFAULT_OFFSET))
 	if err != nil {
 		fault.GinHandler(ctx, err)
 		return
@@ -252,7 +254,7 @@ func (RestaurantApi) PrintBills(ctx *gin.Context) {
 		golambda.Map(printBillRequest.BillIdList,
 			func(_ int, id string) uint {
 				return utils.StringToUint(id)
-			}), printBillRequest.Offset)
+			}), int64(DEFAULT_OFFSET))
 }
 
 func (RestaurantApi) SetBills(ctx *gin.Context) {
