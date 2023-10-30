@@ -7,7 +7,7 @@ require (
 	github.com/Dparty/common v0.0.0-20231021010642-807615a29e5c // indirect
 	github.com/Dparty/dao v0.0.0-20231030083246-054b387ede82 // indirect
 	github.com/Dparty/feieyun v0.0.0-20231030073518-44e79b201c5a // indirect
-	github.com/Dparty/restaurant-services v0.0.0-20231030141735-bf77f042e832 // indirect
+	github.com/Dparty/restaurant-services v0.0.0-20231030144307-bc338b5776fe // indirect
 	github.com/bwmarrin/snowflake v0.3.0 // indirect
 	github.com/bytedance/sonic v1.10.0-rc2 // indirect
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd // indirect
