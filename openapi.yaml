@@ -359,7 +359,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Bill'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Bill'
   /bills/print:
     post:
       tags: [Restaurant]
