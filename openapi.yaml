@@ -224,7 +224,7 @@ paths:
     post:
       tags:
         - Restaurant
-      operationId: Printer
+      operationId: CreateBill
       parameters:
         - $ref: '#/components/parameters/ID'
       requestBody:
