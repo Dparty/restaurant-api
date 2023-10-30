@@ -260,16 +260,6 @@ func (RestaurantApi) SetBills(ctx *gin.Context) {
 	if account == nil {
 		return
 	}
-	tableId := ctx.Param("id")
-	table, err := tableService.GetById(utils.StringToUint(tableId))
-
-	if table.Owner().Owner().ID() != account.ID() {
-		fault.GinHandler(ctx, fault.ErrPermissionDenied)
-		return
-	}
-	if err != nil {
-		return
-	}
 	var setBillRequest apiModels.SetBillsRequest
 	ctx.ShouldBindJSON(&setBillRequest)
 	billService.SetBill(account.ID(),
