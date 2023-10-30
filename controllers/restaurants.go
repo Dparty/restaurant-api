@@ -230,10 +230,8 @@ func (RestaurantApi) CreateOrder(ctx *gin.Context) {
 		fault.GinHandler(ctx, err)
 		return
 	}
-	ctx.JSON(http.StatusCreated, apiModels.Bill{
-		ID:         utils.UintToString(bill.ID()),
-		PickUpCode: bill.PickUpCode(),
-	})
+
+	ctx.JSON(http.StatusCreated, BillBackward(*bill))
 }
 
 func (RestaurantApi) FinishOrder(ctx *gin.Context) {

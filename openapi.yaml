@@ -599,7 +599,6 @@ components:
           type: string
         right:
           type: string
-    
     BillStatus:
       type: string
       enum: [SUBMITTED,PAIED]
