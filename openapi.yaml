@@ -656,6 +656,7 @@ components:
         - billIdList
       properties:
         offset:
+          description: '折扣 10 代表 價格+10% -10代表價格-10%'
           type: integer
           format: int64
         billIdList:
@@ -670,6 +671,7 @@ components:
         - status
       properties:
         offset:
+          description: '折扣 10 代表 價格+10% -10代表價格-10%'
           type: integer
           format: int64
         billIdList:
