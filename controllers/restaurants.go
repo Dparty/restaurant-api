@@ -241,57 +241,9 @@ func (RestaurantApi) CreateOrder(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, BillBackward(*bill))
 }
 
-func (RestaurantApi) FinishOrder(ctx *gin.Context) {
-	account := getAccount(ctx)
-	if account == nil {
-		return
-	}
-	tableId := ctx.Param("id")
-	table, err := tableService.GetById(utils.StringToUint(tableId))
-	if err != nil {
-		return
-	}
-	if table.Owner().Owner().ID() != account.ID() {
-		fault.GinHandler(ctx, fault.ErrPermissionDenied)
-		return
-	}
-	var printBillRequest apiModels.PrintBillRequest
-	ctx.ShouldBindJSON(&printBillRequest)
-	table.Finish(printBillRequest.Offset)
-}
-
-func (RestaurantApi) PrintBill(ctx *gin.Context) {
-	account := getAccount(ctx)
-	if account == nil {
-		return
-	}
-	tableId := ctx.Param("id")
-	table, err := tableService.GetById(utils.StringToUint(tableId))
-	if table.Owner().Owner().ID() != account.ID() {
-		fault.GinHandler(ctx, fault.ErrPermissionDenied)
-		return
-	}
-	if err != nil {
-		return
-	}
-	var printBillRequest apiModels.PrintBillRequest
-	ctx.ShouldBindJSON(&printBillRequest)
-	table.PrintBills(printBillRequest.Offset)
-}
-
 func (RestaurantApi) PrintBills(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
-		return
-	}
-	tableId := ctx.Param("id")
-	table, err := tableService.GetById(utils.StringToUint(tableId))
-
-	if table.Owner().Owner().ID() != account.ID() {
-		fault.GinHandler(ctx, fault.ErrPermissionDenied)
-		return
-	}
-	if err != nil {
 		return
 	}
 	var printBillRequest apiModels.PrintBillsRequest

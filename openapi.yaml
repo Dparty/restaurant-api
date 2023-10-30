@@ -239,26 +239,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Bill'
-  /tables/{id}/print:
-    post:
-      tags:
-        - Restaurant
-      operationId: PrintBill
-      parameters:
-        - $ref: '#/components/parameters/ID'
-      responses:
-        '200':
-          description: 'Created'
-  /tables/{id}/finish:
-    put:
-      tags:
-        - Restaurant
-      operationId: FinishOrder
-      parameters:
-        - $ref: '#/components/parameters/ID'
-      responses:
-        '200':
-          description: 'Created'
   /items/{id}:
     get:
       tags:
