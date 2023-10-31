@@ -93,6 +93,7 @@ type Bill struct {
 	Orders     []Order `json:"orders"`
 	PickUpCode int64   `json:"pickUpCode"`
 	Status     string  `json:"status"`
+	TableLabel string  `json:"TableLabel"`
 }
 
 type PrintBillRequest struct {

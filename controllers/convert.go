@@ -84,6 +84,7 @@ func PrinterBackward(printer serviceModels.Printer) apiModels.Printer {
 
 func BillBackward(bill serviceModels.Bill) apiModels.Bill {
 	return apiModels.Bill{
+		TableLabel: bill.Entity().TableLabel,
 		Status:     bill.Entity().Status,
 		ID:         utils.UintToString(bill.ID()),
 		PickUpCode: bill.PickUpCode(),

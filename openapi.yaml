@@ -591,6 +591,8 @@ components:
       properties:
         id:
           type: string
+        tableId:
+          type: string
         status:
           $ref: '#/components/schemas/BillStatus'
         orders:
