@@ -750,10 +750,6 @@ components:
         extra:
           type: integer
           format: int64
-    Ordering:
-      description: 'Ordering'
-      type: string
-      enum: [ASCENDING, DESCENDING]
     Pagination:
       description: 'Pagination'
       type: object
@@ -775,12 +771,6 @@ components:
           format: int64
           description: 'Total page'
   parameters:
-    Ordering:
-      name: ordering
-      description: 'ASCENDING or DESCENDING'
-      in: query
-      schema:
-        $ref: '#/components/schemas/Ordering'
     IndexParam:
       name: index
       in: query
