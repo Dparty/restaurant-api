@@ -97,6 +97,35 @@ func (RestaurantApi) CreateTable(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, TableBackward(table))
 }
 
+func (RestaurantApi) UpdateTable(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	id := ctx.Param("id")
+	table, err := tableService.GetById(utils.StringToUint(id))
+	if err != nil {
+		fault.GinHandler(ctx, err)
+		return
+	}
+	if table.Owner().Owner().ID() != account.ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+	var request apiModels.PutTableRequest
+	ctx.ShouldBindJSON(&request)
+	if !table.Update(request.Label, request.X, request.Y) {
+		fault.GinHandler(ctx, fault.ErrCreateTableConflict)
+		return
+	}
+	ctx.JSON(http.StatusOK, apiModels.Table{
+		Id:    utils.UintToString(table.ID()),
+		X:     request.X,
+		Y:     request.Y,
+		Label: request.Label,
+	})
+}
+
 func (RestaurantApi) GetRestaurant(ctx *gin.Context) {
 	restaurant, err := restaurantService.GetRestaurant(utils.StringToUint(ctx.Param("id")))
 	if err != nil {
@@ -336,12 +365,4 @@ func (RestaurantApi) ListBills(ctx *gin.Context) {
 		func(_ int, bill restaurantModels.Bill) apiModels.Bill {
 			return BillBackward(bill)
 		}))
-}
-
-func (RestaurantApi) GetBill(ctx *gin.Context) {
-
-}
-
-func (RestaurantApi) UpdateBillStatus(ctx *gin.Context) {
-
 }
