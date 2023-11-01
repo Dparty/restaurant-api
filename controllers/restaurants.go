@@ -71,6 +71,7 @@ func (RestaurantApi) UpdateItem(ctx *gin.Context) {
 	}
 	var request apiModels.PutItemRequest
 	ctx.ShouldBindJSON(&request)
+	// TODO: refactor
 	entity := item.Entity()
 	entity.Name = request.Name
 	entity.Tags = request.Tags
