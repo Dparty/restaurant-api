@@ -60,8 +60,29 @@ func (RestaurantApi) UpdateItem(ctx *gin.Context) {
 	if account == nil {
 		return
 	}
-	// id :=
-	// 	itemService.GetById(utils.StringToUint())
+	id := ctx.Param("id")
+	item, err := itemService.GetById(utils.StringToUint(id))
+	if err != nil {
+		fault.GinHandler(ctx, err)
+	}
+	if item.Owner().Owner().ID() != account.ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+	var request apiModels.PutItemRequest
+	ctx.ShouldBindJSON(&request)
+	entity := item.Entity()
+	entity.Name = request.Name
+	entity.Tags = request.Tags
+	entity.Attributes = request.Attributes
+	entity.Images = request.Images
+	entity.Pricing = request.Pricing
+	entity.Printers = golambda.Map(request.Printers, func(_ int, printerId string) uint {
+		return utils.StringToUint(printerId)
+	})
+	item.SetEntity(entity)
+	item.Save()
+	ctx.JSON(http.StatusCreated, ItemConvert(item))
 }
 
 func (RestaurantApi) ListRestaurant(ctx *gin.Context) {
