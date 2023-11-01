@@ -595,6 +595,8 @@ components:
           type: string
         status:
           $ref: '#/components/schemas/BillStatus'
+        tableLabel:
+          type: string
         orders:
           type: array
           items:
