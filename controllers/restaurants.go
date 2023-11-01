@@ -56,7 +56,12 @@ func (RestaurantApi) CreateItem(ctx *gin.Context) {
 }
 
 func (RestaurantApi) UpdateItem(ctx *gin.Context) {
-
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	// id :=
+	// 	itemService.GetById(utils.StringToUint())
 }
 
 func (RestaurantApi) ListRestaurant(ctx *gin.Context) {
