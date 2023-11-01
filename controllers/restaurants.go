@@ -12,7 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var DEFAULT_OFFSET = -5
+var DEFAULT_OFFSET = 10
 
 type RestaurantApi struct{}
 
