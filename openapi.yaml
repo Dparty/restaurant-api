@@ -118,6 +118,25 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ItemList'
+  /restaurants/{id}/tables:
+    post:
+      tags:
+        - Restaurant
+      operationId: CreateTable
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutTableRequest'
+      responses:
+        '201':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Table'
   /restaurants/{id}/printers:
     post:
       tags:
