@@ -310,7 +310,7 @@ func (RestaurantApi) PrintBills(ctx *gin.Context) {
 		golambda.Map(printBillRequest.BillIdList,
 			func(_ int, id string) uint {
 				return utils.StringToUint(id)
-			}), int64(DEFAULT_OFFSET))
+			}), printBillRequest.Offset)
 }
 
 func (RestaurantApi) SetBills(ctx *gin.Context) {
