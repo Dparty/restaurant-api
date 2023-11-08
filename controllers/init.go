@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 
+	"github.com/Depado/ginprom"
 	authServices "github.com/Dparty/auth-services"
 	"github.com/Dparty/common/server"
 	"github.com/Dparty/dao"
@@ -46,6 +47,12 @@ func Init(addr ...string) {
 	billService = restaurantServices.NewBillService(db)
 	router = gin.Default()
 	var restaurantApi RestaurantApi
+	p := ginprom.New(
+		ginprom.Engine(router),
+		ginprom.Subsystem("gin"),
+		ginprom.Path("/metrics"),
+	)
+	router.Use(p.Instrument())
 	router.Use(authService.Auth())
 	router.Use(server.CorsMiddleware())
 	router.POST("/sessions", CreateSession)
@@ -64,6 +71,7 @@ func Init(addr ...string) {
 	router.PUT("/tables/:id", restaurantApi.UpdateTable)
 	router.POST("/tables/:id/orders", restaurantApi.CreateOrder)
 	router.GET("/bills", restaurantApi.ListBills)
+	router.PATCH("/bills", restaurantApi.CancelItems)
 	router.POST("/bills/print", restaurantApi.PrintBills)
 	router.POST("/bills/set", restaurantApi.SetBills)
 	router.Run(addr...)

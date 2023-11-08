@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 
@@ -392,4 +393,10 @@ func (RestaurantApi) ListBills(ctx *gin.Context) {
 		func(_ int, bill restaurantModels.Bill) apiModels.Bill {
 			return BillBackward(bill)
 		}))
+}
+
+func (RestaurantApi) CancelItems(ctx *gin.Context) {
+	billId := ctx.Param("id")
+	var createBillRequest apiModels.CreateBillRequest
+	fmt.Println(billId, createBillRequest)
 }

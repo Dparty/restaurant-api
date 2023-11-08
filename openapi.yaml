@@ -385,7 +385,24 @@ paths:
       responses:
         '200':
           description: 'Success'
-  /bills/{id}:
+  /bills/{id}/items/cancel:
+    patch:
+      tags: [Restaurant]
+      operationId: CancelItems
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBillRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bill'
     get:
       tags: [Restaurant]
       operationId: GetBill
