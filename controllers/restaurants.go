@@ -48,6 +48,7 @@ func (RestaurantApi) CreateItem(ctx *gin.Context) {
 		golambda.Map(putItemRequest.Printers, func(_ int, printerId string) uint {
 			return utils.StringToUint(printerId)
 		}),
+		putItemRequest.Status,
 	)
 	if err != nil {
 		fault.GinHandler(ctx, err)
@@ -82,6 +83,7 @@ func (RestaurantApi) UpdateItem(ctx *gin.Context) {
 	entity.Printers = golambda.Map(request.Printers, func(_ int, printerId string) uint {
 		return utils.StringToUint(printerId)
 	})
+	entity.Status = request.Status
 	item.SetEntity(entity)
 	item.Save()
 	ctx.JSON(http.StatusCreated, ItemConvert(item))

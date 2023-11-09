@@ -24,6 +24,7 @@ type PutItemRequest struct {
 	Pricing    int64              `json:"pricing"`
 	Attributes []models.Attribute `json:"attributes"`
 	Images     []string           `json:"images"`
+	Status     string             `json:"status"`
 }
 
 type Item struct {
@@ -34,6 +35,7 @@ type Item struct {
 	Pricing    int64              `json:"pricing"`
 	Attributes []models.Attribute `json:"attributes"`
 	Images     []string           `json:"images"`
+	Status     string             `json:"status"`
 }
 
 type Attribute struct {

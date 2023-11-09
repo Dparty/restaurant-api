@@ -46,10 +46,14 @@ github.com/Dparty/common v0.0.0-20231021010642-807615a29e5c h1:uOqHWrnZF6ZzKnPWo
 github.com/Dparty/common v0.0.0-20231021010642-807615a29e5c/go.mod h1:sY807DCbNdj2+kTNspZcO7/X1zJBmTmxy5TSQA7+lL8=
 github.com/Dparty/dao v0.0.0-20231030083246-054b387ede82 h1:fVA/vn/PP9e5m8aCovav9jBV0aipnmJfbxdFI6oTUFw=
 github.com/Dparty/dao v0.0.0-20231030083246-054b387ede82/go.mod h1:+cAVzOv1QXZxvKFCzsRYk/brdzYpIku9ycu2CYPQOPA=
+github.com/Dparty/dao v0.0.0-20231109060158-7535dcc6ad74 h1:B8o1WfULQIairPkdW+onF3zQBFWF+lmRemgmdZzW6EI=
+github.com/Dparty/dao v0.0.0-20231109060158-7535dcc6ad74/go.mod h1:+cAVzOv1QXZxvKFCzsRYk/brdzYpIku9ycu2CYPQOPA=
 github.com/Dparty/feieyun v0.0.0-20231030073518-44e79b201c5a h1:jhE3sjzruuHkEmwHAuKlfsIpm+l8A7n4n2WDLXNJDlk=
 github.com/Dparty/feieyun v0.0.0-20231030073518-44e79b201c5a/go.mod h1:MRJeY/NuyVojLTIm2DymDcP4ryYPqcESMOdYUCoXSjA=
 github.com/Dparty/restaurant-services v0.0.0-20231101102524-2b06856a4d6b h1:7d4zG9q1bH/RNAg30XUtLofLuzhvbGn5xmhU8djXSkw=
 github.com/Dparty/restaurant-services v0.0.0-20231101102524-2b06856a4d6b/go.mod h1:Ibt3wDs5UmtHydvMbzJRd4RU7hqTf7vG7B+xqSp5YUM=
+github.com/Dparty/restaurant-services v0.0.0-20231109061116-3fc6b51b4489 h1:EeLDbRhJ3AetpOiYp/8YgSCvwkVAyXMM6bsjq2ssDJc=
+github.com/Dparty/restaurant-services v0.0.0-20231109061116-3fc6b51b4489/go.mod h1:wTy5NZX4JMWCSiq9wr3tD906qP08b7DUwtj5Kj7C3J8=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=

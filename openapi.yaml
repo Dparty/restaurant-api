@@ -699,6 +699,9 @@ components:
             type: string
         status:
           $ref: '#/components/schemas/BillStatus'
+    ItemStatus:
+      type: string
+      enum: [ACTIVED,DEACTIVED]
     PutItemRequest:
       type: object
       required:
@@ -708,6 +711,7 @@ components:
         - images
         - tags
         - printers
+        - status
       properties:
         name:
           type: string
@@ -730,6 +734,8 @@ components:
           type: array
           items:
             type: string
+        status:
+          $ref: '#/components/schemas/ItemStatus'
     Item:
       type: object
       description: 'Item'
@@ -741,6 +747,7 @@ components:
         - images
         - tags
         - printers
+        - status
       properties:
         id:
           type: string
@@ -765,6 +772,8 @@ components:
           type: array
           items:
             type: string
+        status:
+          $ref: '#/components/schemas/ItemStatus'
     Attribute:
       type: object
       required:
