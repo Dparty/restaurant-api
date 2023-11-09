@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Dparty APIs
+  title: Restaurant APIs
   description: |-
     Dparty
   contact:
@@ -8,6 +8,8 @@ info:
   version: 0.0.20
 servers:
   - url: https://localhost/api/v1
+  - url: https://restaurant-uat.sum-foods.com
+  - url: https://restaurant.sum-foods.com
 tags:
   - name: Account
   - name: Restaurant

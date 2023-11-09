@@ -20,7 +20,7 @@ var tableService restaurantServices.TableService
 var billService restaurantServices.BillService
 var router *gin.Engine
 
-func Init(addr ...string) {
+func init() {
 	var err error
 	viper.SetConfigName(".env.yaml")
 	viper.SetConfigType("yaml")
@@ -29,6 +29,9 @@ func Init(addr ...string) {
 	if err != nil {
 		panic(fmt.Errorf("databases fatal error config file: %w", err))
 	}
+}
+
+func Init(addr ...string) {
 	user := viper.GetString("database.user")
 	password := viper.GetString("database.password")
 	host := viper.GetString("database.host")
