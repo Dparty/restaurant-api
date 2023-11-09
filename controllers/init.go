@@ -18,7 +18,6 @@ var printerService restaurantServices.PrinterService
 var itemService restaurantServices.ItemService
 var tableService restaurantServices.TableService
 var billService restaurantServices.BillService
-var router *gin.Engine
 
 func init() {
 	var err error
@@ -48,7 +47,7 @@ func Init(addr ...string) {
 	itemService = restaurantServices.NewItemService(db)
 	tableService = restaurantServices.NewTableService(db)
 	billService = restaurantServices.NewBillService(db)
-	router = gin.Default()
+	router := gin.Default()
 	var restaurantApi RestaurantApi
 	p := ginprom.New(
 		ginprom.Engine(router),
