@@ -300,7 +300,7 @@ paths:
       responses:
         '204':
           description: 'Deleted'
-  /items/{id}/image:
+  /items/{id}/images:
     put:
       tags:
         - Restaurant
