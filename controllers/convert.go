@@ -43,13 +43,14 @@ func ItemConvert(item serviceModels.Item) apiModels.Item {
 	return apiModels.Item{
 		Id:         utils.UintToString(item.ID()),
 		Name:       entity.Name,
-		Pricing:    item.Entity().Pricing,
+		Pricing:    entity.Pricing,
 		Attributes: arrayConvert(entity.Attributes),
 		Images:     arrayConvert(entity.Images),
 		Tags:       arrayConvert(entity.Tags),
 		Printers: golambda.Map(entity.Printers, func(_ int, id uint) string {
 			return utils.UintToString(id)
 		}),
+		Status: entity.Status,
 	}
 }
 
