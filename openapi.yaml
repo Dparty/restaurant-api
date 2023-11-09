@@ -388,7 +388,7 @@ paths:
   /bills/{id}/items/cancel:
     patch:
       tags: [Restaurant]
-      operationId: CancelItems
+      operationId: CancelBillItems
       parameters:
         - $ref: '#/components/parameters/ID'
       requestBody:
