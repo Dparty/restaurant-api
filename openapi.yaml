@@ -494,6 +494,9 @@ components:
     PrinterType:
       type: string
       enum: [BILL, KITCHEN]
+    PrinterModel:
+      type: string
+      enum: [58mm, 88mm]
     PutPrinterRequest:
       type: object
       required:
@@ -510,6 +513,8 @@ components:
           type: string
         type:
           $ref: '#/components/schemas/PrinterType'
+        model:
+          $ref: '#/components/schemas/PrinterModel'
     Printer:
       type: object
       required:
@@ -529,6 +534,8 @@ components:
           type: string
         type:
           $ref: '#/components/schemas/PrinterType'
+        model:
+          $ref: '#/components/schemas/PrinterModel'
     PrinterList:
       type: array
       items:

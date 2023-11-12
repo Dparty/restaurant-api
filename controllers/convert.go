@@ -80,6 +80,7 @@ func PrinterBackward(printer serviceModels.Printer) apiModels.Printer {
 		Sn:          printer.Sn(),
 		Name:        printer.Name(),
 		Description: printer.Description(),
+		Model:       printer.Model(),
 	}
 }
 

@@ -66,6 +66,7 @@ type PutPrinterRequest struct {
 	Sn          string `json:"sn"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
+	Model       string `json:"model"`
 }
 
 type Printer struct {
@@ -74,6 +75,7 @@ type Printer struct {
 	Sn          string `json:"sn"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
+	Model       string `json:"model"`
 }
 
 type CreateBillRequest struct {

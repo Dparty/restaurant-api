@@ -398,6 +398,10 @@ func (RestaurantApi) ListBills(ctx *gin.Context) {
 }
 
 func (RestaurantApi) CancelItems(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
 	billId := ctx.Param("id")
 	var createBillRequest apiModels.CreateBillRequest
 	fmt.Println(billId, createBillRequest)
