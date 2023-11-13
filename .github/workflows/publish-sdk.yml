@@ -20,7 +20,7 @@ jobs:
           openapi-file: openapi.yaml
           generator: typescript-fetch
           config-file: openapi-ts-config.yml
-      - name: Setup node
+      - name: Publish SDK
         uses: actions/setup-node@v3
         with:
           node-version: 18
