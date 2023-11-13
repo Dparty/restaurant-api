@@ -17,7 +17,7 @@ jobs:
         with:
           openapi-file: openapi.yaml
           generator: typescript-fetch
-          config-file: openapi-ts-config.yml
+          config-file: openapi-ts-config2.yml
       - name: Publish SDK
         uses: actions/setup-node@v3
         with:
