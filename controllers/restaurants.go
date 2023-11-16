@@ -7,6 +7,7 @@ import (
 
 	"github.com/Dparty/common/fault"
 	"github.com/Dparty/common/utils"
+	"github.com/Dparty/restaurant-api/models"
 	apiModels "github.com/Dparty/restaurant-api/models"
 	restaurantModels "github.com/Dparty/restaurant-services/models"
 	"github.com/chenyunda218/golambda"
@@ -187,6 +188,27 @@ func (RestaurantApi) CreatePrinter(ctx *gin.Context) {
 		return
 	}
 	ctx.JSON(http.StatusCreated, PrinterBackward(table))
+}
+
+func (RestaurantApi) UpdatePrinter(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	id := ctx.Param("id")
+	printer, err := printerService.GetById(utils.StringToUint(id))
+	if err != nil {
+		fault.GinHandler(ctx, err)
+		return
+	}
+	if account.Owner().ID() != printer.Owner().ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+	var updateRequest models.PutPrinterRequest
+	ctx.ShouldBindJSON(&updateRequest)
+	printer.Update(updateRequest.Name, updateRequest.Description, updateRequest.Sn, updateRequest.Type)
+	ctx.JSON(http.StatusOK, PrinterBackward(*printer))
 }
 
 func (RestaurantApi) ListPrinter(ctx *gin.Context) {
