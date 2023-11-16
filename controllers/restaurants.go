@@ -182,7 +182,7 @@ func (RestaurantApi) CreatePrinter(ctx *gin.Context) {
 	}
 	var putPrinterRequest apiModels.PutPrinterRequest
 	ctx.ShouldBindJSON(&putPrinterRequest)
-	table, err := restaurant.CreatePrinter(putPrinterRequest.Type, putPrinterRequest.Sn, putPrinterRequest.Name, "")
+	table, err := restaurant.CreatePrinter(putPrinterRequest.Type, putPrinterRequest.Sn, putPrinterRequest.Name, putPrinterRequest.Description, putPrinterRequest.Model)
 	if err != nil {
 		fault.GinHandler(ctx, err)
 		return

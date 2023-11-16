@@ -66,6 +66,8 @@ github.com/Dparty/restaurant-services v0.0.0-20231116061652-941b01f7c2d5 h1:Gdoh
 github.com/Dparty/restaurant-services v0.0.0-20231116061652-941b01f7c2d5/go.mod h1:CMx4MXFEMAz1F2gHFyqyE3DXff6Hjyg1LjfN4KkDIEg=
 github.com/Dparty/restaurant-services v0.0.0-20231116074434-37358d2face3 h1:KRz6YiVNBU92Ht8bblveT1Qco3dl1RGWCxYz1HM8T1g=
 github.com/Dparty/restaurant-services v0.0.0-20231116074434-37358d2face3/go.mod h1:CMx4MXFEMAz1F2gHFyqyE3DXff6Hjyg1LjfN4KkDIEg=
+github.com/Dparty/restaurant-services v0.0.0-20231116074814-f4de3612df90 h1:Fz5crJ8aJud8FSGAtrQnWFMOacWNx++4d3G1KaVf1Bk=
+github.com/Dparty/restaurant-services v0.0.0-20231116074814-f4de3612df90/go.mod h1:CMx4MXFEMAz1F2gHFyqyE3DXff6Hjyg1LjfN4KkDIEg=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=
