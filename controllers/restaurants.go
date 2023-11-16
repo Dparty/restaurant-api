@@ -201,7 +201,7 @@ func (RestaurantApi) UpdatePrinter(ctx *gin.Context) {
 		fault.GinHandler(ctx, err)
 		return
 	}
-	if account.Owner().ID() != printer.Owner().ID() {
+	if account.ID() != printer.Owner().ID() {
 		fault.GinHandler(ctx, fault.ErrPermissionDenied)
 		return
 	}
