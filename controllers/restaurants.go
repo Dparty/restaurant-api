@@ -7,7 +7,6 @@ import (
 
 	"github.com/Dparty/common/fault"
 	"github.com/Dparty/common/utils"
-	"github.com/Dparty/restaurant-api/models"
 	apiModels "github.com/Dparty/restaurant-api/models"
 	restaurantModels "github.com/Dparty/restaurant-services/models"
 	"github.com/chenyunda218/golambda"
@@ -205,7 +204,7 @@ func (RestaurantApi) UpdatePrinter(ctx *gin.Context) {
 		fault.GinHandler(ctx, fault.ErrPermissionDenied)
 		return
 	}
-	var updateRequest models.PutPrinterRequest
+	var updateRequest apiModels.PutPrinterRequest
 	ctx.ShouldBindJSON(&updateRequest)
 	printer.Update(updateRequest.Name, updateRequest.Description, updateRequest.Sn, updateRequest.Type, updateRequest.Model)
 	ctx.JSON(http.StatusOK, PrinterBackward(*printer))
