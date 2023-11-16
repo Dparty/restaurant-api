@@ -6,7 +6,7 @@ require (
 	github.com/Dparty/auth-services v0.0.0-20231021021808-85da0505de6a
 	github.com/Dparty/common v0.0.0-20231021010642-807615a29e5c
 	github.com/Dparty/dao v0.0.0-20231112014939-066838c7deab
-	github.com/Dparty/restaurant-services v0.0.0-20231112015132-672083e2dda9
+	github.com/Dparty/restaurant-services v0.0.0-20231116044608-b356478c70a0
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd
 	github.com/gin-gonic/gin v1.9.1
 	github.com/spf13/viper v1.17.0
@@ -14,7 +14,7 @@ require (
 
 require (
 	github.com/Depado/ginprom v1.7.11 // indirect
-	github.com/Dparty/feieyun v0.0.0-20231030073518-44e79b201c5a // indirect
+	github.com/Dparty/feieyun v0.0.0-20231115064000-4dba3ee5487c // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bwmarrin/snowflake v0.3.0 // indirect
 	github.com/bytedance/sonic v1.10.2 // indirect
