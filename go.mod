@@ -7,7 +7,7 @@ require (
 	github.com/Dparty/auth-services v0.0.0-20231116075426-0f8f6f33bab5
 	github.com/Dparty/common v0.0.0-20231116081526-d4557a18ca69
 	github.com/Dparty/dao v0.0.0-20231116081744-7fbf7dca6a5a
-	github.com/Dparty/restaurant-services v0.0.0-20231116081834-1e063a77d011
+	github.com/Dparty/restaurant-services v0.0.0-20231117081054-3002aef4f1d9
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd
 	github.com/gin-gonic/gin v1.9.1
 	github.com/spf13/viper v1.17.0
@@ -22,6 +22,7 @@ require (
 	github.com/chenzhuoyu/base64x v0.0.0-20230717121745-296ad89f973d // indirect
 	github.com/chenzhuoyu/iasm v0.9.1 // indirect
 	github.com/clbanning/mxj v1.8.4 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/fsnotify/fsnotify v1.6.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
@@ -50,6 +51,7 @@ require (
 	github.com/prometheus/client_model v0.5.0 // indirect
 	github.com/prometheus/common v0.45.0 // indirect
 	github.com/prometheus/procfs v0.12.0 // indirect
+	github.com/redis/go-redis/v9 v9.3.0 // indirect
 	github.com/sagikazarmark/locafero v0.3.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect

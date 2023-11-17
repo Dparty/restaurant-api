@@ -19,25 +19,23 @@ var itemService restaurantServices.ItemService
 var tableService restaurantServices.TableService
 var billService restaurantServices.BillService
 
-func init() {
+func Init(addr ...string) {
+	config := viper.New()
 	var err error
-	viper.SetConfigName(".env.yaml")
-	viper.SetConfigType("yaml")
-	viper.AddConfigPath(".")
-	err = viper.ReadInConfig()
+	config.SetConfigName(".env.yaml")
+	config.SetConfigType("yaml")
+	config.AddConfigPath(".")
+	err = config.ReadInConfig()
 	if err != nil {
 		panic(fmt.Errorf("databases fatal error config file: %w", err))
 	}
-}
-
-func Init(addr ...string) {
-	user := viper.GetString("database.user")
-	password := viper.GetString("database.password")
-	host := viper.GetString("database.host")
-	port := viper.GetString("database.port")
-	database := viper.GetString("database.database")
+	user := config.GetString("database.user")
+	password := config.GetString("database.password")
+	host := config.GetString("database.host")
+	port := config.GetString("database.port")
+	database := config.GetString("database.database")
 	db, err := dao.NewConnection(user, password, host, port, database)
-	restaurantServices.Init(db)
+	restaurantServices.Init(config, db)
 	if err != nil {
 		panic(err)
 	}
