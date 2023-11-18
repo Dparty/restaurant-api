@@ -41,6 +41,10 @@ func (RestaurantApi) UpdateRestaurant(ctx *gin.Context) {
 		fault.GinHandler(ctx, err)
 		return
 	}
+	if !account.Own(&restaurant) {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
 	ctx.JSON(http.StatusCreated, RestaurantConvert(restaurant))
 }
 
