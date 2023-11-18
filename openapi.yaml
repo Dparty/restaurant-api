@@ -458,6 +458,7 @@ components:
         - description
         - items
         - tables
+        - categories
       properties:
         id:
           type: string
@@ -473,6 +474,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Table'
+        categories:
+          type: array
+          items:
+            type: string
     RestaurantList:
       type: object
       properties:

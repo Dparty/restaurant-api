@@ -28,6 +28,22 @@ func (RestaurantApi) CreateRestaurant(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, RestaurantConvert(restaurant))
 }
 
+func (RestaurantApi) UpdateRestaurant(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	id := ctx.Param("id")
+	var request apiModels.PutRestaurantRequest
+	ctx.ShouldBindJSON(&request)
+	restaurant, err := restaurantService.UpdateRestaurant(utils.StringToUint(id), request.Name, request.Description, request.Categories)
+	if err != nil {
+		fault.GinHandler(ctx, err)
+		return
+	}
+	ctx.JSON(http.StatusCreated, RestaurantConvert(restaurant))
+}
+
 func (RestaurantApi) CreateItem(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {

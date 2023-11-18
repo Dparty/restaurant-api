@@ -5,16 +5,18 @@ import (
 )
 
 type PutRestaurantRequest struct {
-	Name        string `json:"name"`
-	Description string `json:"description"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	Categories  []string `json:"categories"`
 }
 
 type Restaurant struct {
-	Id          string  `json:"id"`
-	Name        string  `json:"name"`
-	Description string  `json:"description"`
-	Items       []Item  `json:"items"`
-	Tables      []Table `json:"tables"`
+	Id          string   `json:"id"`
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	Items       []Item   `json:"items"`
+	Tables      []Table  `json:"tables"`
+	Categories  []string `json:"categories"`
 }
 
 type PutItemRequest struct {
