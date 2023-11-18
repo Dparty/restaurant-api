@@ -26,6 +26,7 @@ func RestaurantConvert(restaurant serviceModels.Restaurant) apiModels.Restaurant
 		Tables: golambda.Map(restaurant.Tables(), func(_ int, i serviceModels.Table) apiModels.Table {
 			return TableBackward(i)
 		}),
+		Categories: restaurant.Categories(),
 	}
 }
 
