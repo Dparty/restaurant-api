@@ -35,7 +35,7 @@ func Init(addr ...string) {
 	port := config.GetString("database.port")
 	database := config.GetString("database.database")
 	db, err := dao.NewConnection(user, password, host, port, database)
-	restaurantServices.Init(config, db)
+	restaurantServices.Init(db)
 	if err != nil {
 		panic(err)
 	}
