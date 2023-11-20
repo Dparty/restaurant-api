@@ -30,9 +30,9 @@ type PutItemRequest struct {
 }
 
 type Item struct {
+	Id         string             `json:"id"`
 	Tags       []string           `json:"tags"`
 	Printers   []string           `json:"printers"`
-	Id         string             `json:"id"`
 	Name       string             `json:"name"`
 	Pricing    int64              `json:"pricing"`
 	Attributes []models.Attribute `json:"attributes"`
