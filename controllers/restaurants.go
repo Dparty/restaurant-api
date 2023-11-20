@@ -29,10 +29,10 @@ func (RestaurantApi) CreateRestaurant(ctx *gin.Context) {
 }
 
 func (RestaurantApi) UpdateRestaurant(ctx *gin.Context) {
-	account := getAccount(ctx)
-	if account == nil {
-		return
-	}
+	// account := getAccount(ctx)
+	// if account == nil {
+	// 	return
+	// }
 	id := ctx.Param("id")
 	var request apiModels.PutRestaurantRequest
 	ctx.ShouldBindJSON(&request)
@@ -41,10 +41,10 @@ func (RestaurantApi) UpdateRestaurant(ctx *gin.Context) {
 		fault.GinHandler(ctx, err)
 		return
 	}
-	if !account.Own(&restaurant) {
-		fault.GinHandler(ctx, fault.ErrPermissionDenied)
-		return
-	}
+	// if !account.Own(&restaurant) {
+	// 	fault.GinHandler(ctx, fault.ErrPermissionDenied)
+	// 	return
+	// }
 	ctx.JSON(http.StatusCreated, RestaurantConvert(restaurant))
 }
 
