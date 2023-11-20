@@ -491,11 +491,16 @@ components:
       required:
         - name
         - description
+        - categories
       properties:
         name:
           type: string
         description:
           type: string
+        categories:
+          type: array
+          items:
+            type: string
     PrinterType:
       type: string
       enum: [BILL, KITCHEN]
