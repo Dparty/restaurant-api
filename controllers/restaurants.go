@@ -8,7 +8,7 @@ import (
 	"github.com/Dparty/common/fault"
 	"github.com/Dparty/common/utils"
 	apiModels "github.com/Dparty/restaurant-api/models"
-	restaurantModels "github.com/Dparty/restaurant-services/models"
+	restaurantModels "github.com/Dparty/restaurant-services"
 	"github.com/chenyunda218/golambda"
 	"github.com/gin-gonic/gin"
 )

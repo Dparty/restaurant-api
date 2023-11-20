@@ -4,7 +4,7 @@ import (
 	"github.com/Dparty/common/utils"
 	model "github.com/Dparty/dao/restaurant"
 	apiModels "github.com/Dparty/restaurant-api/models"
-	serviceModels "github.com/Dparty/restaurant-services/models"
+	serviceModels "github.com/Dparty/restaurant-services"
 	"github.com/chenyunda218/golambda"
 )
 
