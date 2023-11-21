@@ -1,15 +1,13 @@
 package controllers
 
 import (
-	"fmt"
-
 	"github.com/Depado/ginprom"
 	authServices "github.com/Dparty/auth-services"
+	"github.com/Dparty/common/config"
 	"github.com/Dparty/common/server"
 	"github.com/Dparty/dao"
 	restaurantServices "github.com/Dparty/restaurant-services"
 	"github.com/gin-gonic/gin"
-	"github.com/spf13/viper"
 )
 
 var authService authServices.AuthService
@@ -20,15 +18,6 @@ var tableService restaurantServices.TableService
 var billService restaurantServices.BillService
 
 func Init(addr ...string) {
-	config := viper.New()
-	var err error
-	config.SetConfigName(".env.yaml")
-	config.SetConfigType("yaml")
-	config.AddConfigPath(".")
-	err = config.ReadInConfig()
-	if err != nil {
-		panic(fmt.Errorf("databases fatal error config file: %w", err))
-	}
 	user := config.GetString("database.user")
 	password := config.GetString("database.password")
 	host := config.GetString("database.host")
