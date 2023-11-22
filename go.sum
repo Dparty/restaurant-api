@@ -84,6 +84,8 @@ github.com/Dparty/restaurant-services v0.0.0-20231120085710-ee9836927cd9 h1:4n9L
 github.com/Dparty/restaurant-services v0.0.0-20231120085710-ee9836927cd9/go.mod h1:CfkHMkvbN1aS+dcWJf1xiG/M9UO+lR2ZwD/uNBcJzuE=
 github.com/Dparty/restaurant-services v0.0.0-20231120093649-15e0a5d4784b h1:a65/o5PrO554YWjauPL/6Mk3Q8JwfcopsIJC3HXXoo4=
 github.com/Dparty/restaurant-services v0.0.0-20231120093649-15e0a5d4784b/go.mod h1:I7XcAAyjKznG3CC7oF+HkNxwd6Td2kuItRINfpHGNeM=
+github.com/Dparty/restaurant-services v0.0.0-20231122090203-71b879f2e37d h1:0P2Q+Ycv24P+PsK8ucriCIHH9BxWT1ghNy1Xxxn/+8U=
+github.com/Dparty/restaurant-services v0.0.0-20231122090203-71b879f2e37d/go.mod h1:I7XcAAyjKznG3CC7oF+HkNxwd6Td2kuItRINfpHGNeM=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/appleboy/gofight/v2 v2.1.2 h1:VOy3jow4vIK8BRQJoC/I9muxyYlJ2yb9ht2hZoS3rf4=
 github.com/appleboy/gofight/v2 v2.1.2/go.mod h1:frW+U1QZEdDgixycTj4CygQ48yLTUhplt43+Wczp3rw=

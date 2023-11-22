@@ -226,7 +226,12 @@ func (RestaurantApi) UpdatePrinter(ctx *gin.Context) {
 	}
 	var updateRequest apiModels.PutPrinterRequest
 	ctx.ShouldBindJSON(&updateRequest)
-	printer.Update(updateRequest.Name, updateRequest.Description, updateRequest.Sn, updateRequest.Type, updateRequest.Model)
+	printer.SetName(
+		updateRequest.Name).SetDescription(
+		updateRequest.Description).SetSn(
+		updateRequest.Sn).SetType(
+		updateRequest.Type).SetModel(
+		updateRequest.Model).Submit()
 	ctx.JSON(http.StatusOK, PrinterBackward(*printer))
 }
 
