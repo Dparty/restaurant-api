@@ -1,6 +1,7 @@
 package models
 
 import (
+	"github.com/Dparty/common/data"
 	models "github.com/Dparty/dao/restaurant"
 )
 
@@ -85,13 +86,13 @@ type CreateBillRequest struct {
 }
 
 type Specification struct {
-	ItemId  string        `json:"itemId"`
-	Options []models.Pair `json:"options"`
+	ItemId  string                      `json:"itemId"`
+	Options []data.Pair[string, string] `json:"options"`
 }
 
 type Order struct {
-	Item          Item          `json:"item"`
-	Specification []models.Pair `json:"specification"`
+	Item          Item                        `json:"item"`
+	Specification []data.Pair[string, string] `json:"specification"`
 }
 
 type Bill struct {

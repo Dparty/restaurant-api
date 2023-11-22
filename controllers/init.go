@@ -11,7 +11,7 @@ import (
 )
 
 var authService authServices.AuthService
-var restaurantService restaurantServices.RestaurantService
+var restaurantService *restaurantServices.RestaurantService
 var printerService restaurantServices.PrinterService
 var itemService restaurantServices.ItemService
 var tableService restaurantServices.TableService
