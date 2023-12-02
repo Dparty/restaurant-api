@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"net/http"
 	"time"
 
@@ -26,6 +25,25 @@ func (RestaurantApi) CreateRestaurant(ctx *gin.Context) {
 	ctx.ShouldBindJSON(&request)
 	restaurant := restaurantService.CreateRestaurant(account, request.Name, request.Description)
 	ctx.JSON(http.StatusCreated, RestaurantConvert(restaurant))
+}
+
+func (RestaurantApi) DeleteRestaurant(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	restaurantId := ctx.Param("id")
+	restaurant, err := restaurantService.GetRestaurant(utils.StringToUint(restaurantId))
+	if err != nil {
+		fault.GinHandler(ctx, fault.ErrNotFound)
+		return
+	}
+	if restaurant.Owner().ID() != account.ID() {
+		fault.GinHandler(ctx, fault.ErrPermissionDenied)
+		return
+	}
+	restaurant.Delete()
+	ctx.JSON(http.StatusNoContent, "")
 }
 
 func (RestaurantApi) UpdateRestaurant(ctx *gin.Context) {
@@ -316,38 +334,6 @@ func (RestaurantApi) DeleteTable(ctx *gin.Context) {
 	ctx.JSON(http.StatusNoContent, "")
 }
 
-func (RestaurantApi) CreateOrder(ctx *gin.Context) {
-	tableId := ctx.Param("id")
-	var createBillRequest apiModels.CreateBillRequest
-	ctx.ShouldBindJSON(&createBillRequest)
-	if len(createBillRequest.Specifications) == 0 {
-		ctx.JSON(http.StatusBadRequest, gin.H{
-			"message": "No Specifications",
-			"code":    "70001",
-		})
-		return
-	}
-	table, err := tableService.GetById(utils.StringToUint(tableId))
-	if err != nil {
-		fault.GinHandler(ctx, err)
-		return
-	}
-	var specifications []restaurantModels.Specification
-	for _, specification := range createBillRequest.Specifications {
-		specifications = append(specifications, restaurantModels.Specification{
-			ItemId:  specification.ItemId,
-			Options: specification.Options,
-		})
-	}
-	bill, err := billService.CreateBill(*table, specifications, int64(DEFAULT_OFFSET))
-	if err != nil {
-		fault.GinHandler(ctx, err)
-		return
-	}
-
-	ctx.JSON(http.StatusCreated, BillBackward(*bill))
-}
-
 func (RestaurantApi) PrintBills(ctx *gin.Context) {
 	account := getAccount(ctx)
 	if account == nil {
@@ -441,14 +427,4 @@ func (RestaurantApi) ListBills(ctx *gin.Context) {
 		func(_ int, bill restaurantModels.Bill) apiModels.Bill {
 			return BillBackward(bill)
 		}))
-}
-
-func (RestaurantApi) CancelItems(ctx *gin.Context) {
-	account := getAccount(ctx)
-	if account == nil {
-		return
-	}
-	billId := ctx.Param("id")
-	var createBillRequest apiModels.CreateBillRequest
-	fmt.Println(billId, createBillRequest)
 }

@@ -13,6 +13,7 @@ servers:
 tags:
   - name: Account
   - name: Restaurant
+  - name: Bill
 paths:
   /restaurants:
     post:
@@ -189,7 +190,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PutPrinterRequest'
+                $ref: '#/components/schemas/Printer'
     delete:
       tags:
         - Restaurant
@@ -244,7 +245,7 @@ paths:
   /tables/{id}/orders:
     post:
       tags:
-        - Restaurant
+        - Bill
       operationId: CreateBill
       parameters:
         - $ref: '#/components/parameters/ID'
@@ -405,8 +406,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Bill'
+  /bills/{id}:
     get:
-      tags: [Restaurant]
+      tags: [Bill]
       operationId: GetBill
       parameters:
         - $ref: '#/components/parameters/ID'
@@ -418,7 +420,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Bill'
     put:
-      tags: [Restaurant]
+      tags: [Bill]
       operationId: UpdateBillStatus
       parameters:
         - $ref: '#/components/parameters/ID'
