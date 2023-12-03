@@ -32,7 +32,7 @@ func Init(addr ...string) {
 	router.GET("/restaurants", restaurantApi.ListRestaurant)
 	router.GET("/restaurants/:id", restaurantApi.GetRestaurant)
 	router.PUT("/restaurants/:id", restaurantApi.UpdateRestaurant)
-	router.DELETE("/restaurants/:id", restaurantApi.DeleteRestaurant)
+	// router.DELETE("/restaurants/:id", restaurantApi.DeleteRestaurant)
 	router.POST("/restaurants/:id/items", restaurantApi.CreateItem)
 	router.POST("/restaurants/:id/tables", restaurantApi.CreateTable)
 	router.POST("/restaurants/:id/printers", restaurantApi.CreatePrinter)
