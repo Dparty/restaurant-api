@@ -373,12 +373,10 @@ func (RestaurantApi) UploadItemCover(ctx *gin.Context) {
 		fault.GinHandler(ctx, err)
 		return
 	}
-
 	if item.Owner().Owner().ID() != account.ID() {
 		fault.GinHandler(ctx, fault.ErrPermissionDenied)
 		return
 	}
-
 	file, _ := ctx.FormFile("file")
 	url := item.UploadImage(file)
 	ctx.JSON(http.StatusOK, gin.H{
