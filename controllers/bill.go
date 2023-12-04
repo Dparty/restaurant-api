@@ -136,11 +136,11 @@ func (BillApi) BillSubscription(ctx *gin.Context) {
 				return
 			}
 		case <-time.After(time.Second * 3):
-			bills := golambda.Map(billService.ListBills(utils.StringToUint(restaurantId), _tableId, _status, _startAt, _endAt),
-				func(_ int, bill restaurantModels.Bill) apiModels.Bill {
-					return BillBackward(bill)
-				})
-			j, _ := json.Marshal(bills)
+			j, _ := json.Marshal(
+				golambda.Map(billService.ListBills(utils.StringToUint(restaurantId), _tableId, _status, _startAt, _endAt),
+					func(_ int, bill restaurantModels.Bill) apiModels.Bill {
+						return BillBackward(bill)
+					}))
 			conn.WriteMessage(websocket.TextMessage, j)
 		}
 	}
