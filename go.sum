@@ -46,6 +46,10 @@ github.com/Dparty/auth-services v0.0.0-20231116075426-0f8f6f33bab5 h1:7YBLVZLkqD
 github.com/Dparty/auth-services v0.0.0-20231116075426-0f8f6f33bab5/go.mod h1:wGsvQXbxU5JNnl09j+UebA3idS5Q7XUplv3LI69CXdc=
 github.com/Dparty/auth-services v0.0.0-20231122114933-7ed998e170ad h1:a6ktvq08wDpBA5OvJhTFlGvgnP1oRpEYGqAEKVMLPO8=
 github.com/Dparty/auth-services v0.0.0-20231122114933-7ed998e170ad/go.mod h1:Njz/lvDKyAfQTpwD19qhrVu1Y8HVUaES7Ltrqd+gc5k=
+github.com/Dparty/auth-services v0.0.0-20231204090003-e7a1dc724786 h1:AbOhm44PeB4vjsaxU51bsY11+kwIDM6CCLrdqe4bHjc=
+github.com/Dparty/auth-services v0.0.0-20231204090003-e7a1dc724786/go.mod h1:3CsWntJC4zfRBTAjOkDOr+Vo+vyNdnIWZBmIi2KUSZQ=
+github.com/Dparty/auth-services v0.0.0-20231204091948-1345935cb765 h1:ytFRZLA5e8Btc4QKW3CIPTFSAytaZ/3VKhQl6siJmtc=
+github.com/Dparty/auth-services v0.0.0-20231204091948-1345935cb765/go.mod h1:wkVDmtXFg3FtINiTpp1yqIYAGe9jM8ySZef5bvqIWLY=
 github.com/Dparty/common v0.0.0-20231116081526-d4557a18ca69 h1:U/n4npzlHUJYLEC3NK02cCiQuvAmvO3+UR8BmMPaX6Y=
 github.com/Dparty/common v0.0.0-20231116081526-d4557a18ca69/go.mod h1:sY807DCbNdj2+kTNspZcO7/X1zJBmTmxy5TSQA7+lL8=
 github.com/Dparty/common v0.0.0-20231117071835-afd08e73760c h1:3Ku3dVzEmWHHJrCOXU1Y1s5OvQR6kHdCYhD7PimzTXU=
@@ -58,6 +62,8 @@ github.com/Dparty/common v0.0.0-20231122030430-eceab0964974 h1:2W3/Q5hcj+ats3r6v
 github.com/Dparty/common v0.0.0-20231122030430-eceab0964974/go.mod h1:0MkPaoUno+tNT4QvJ1cQr5n8O7ZNLAC28H8Okxobi+8=
 github.com/Dparty/common v0.0.0-20231204061145-f9e546f5f62b h1:ZpiT1J0reGFy5o0hPLPspGblHYeAGDOwjVBiK2fsP+U=
 github.com/Dparty/common v0.0.0-20231204061145-f9e546f5f62b/go.mod h1:EWX/G93OLrM4VZ48K3ckvOMMGgTjdWa9gzCyJLS1DRw=
+github.com/Dparty/common v0.0.0-20231204091534-90b252024099 h1:1wSxbc2lMMYntkuVsm32WVa0KcgoQg8IKoR6tM2jUgQ=
+github.com/Dparty/common v0.0.0-20231204091534-90b252024099/go.mod h1:EWX/G93OLrM4VZ48K3ckvOMMGgTjdWa9gzCyJLS1DRw=
 github.com/Dparty/dao v0.0.0-20231116081744-7fbf7dca6a5a h1:waXuK32f5JH4PKQzAcVQGSMsU17K1G9m/r8tVvWLgj4=
 github.com/Dparty/dao v0.0.0-20231116081744-7fbf7dca6a5a/go.mod h1:U0mQzO6oIFgcRXO44tspV3IJKT5xI1QONSYxMqx/gH4=
 github.com/Dparty/dao v0.0.0-20231118010323-e0937a4dc07b h1:+4dDYFYfn6zo2kvhU2F5bsj2xGMRS7dhvLawyN7lPSM=
@@ -178,6 +184,8 @@ github.com/Dparty/restaurant-services v0.0.0-20231204082500-b238be45521e h1:/Qfh
 github.com/Dparty/restaurant-services v0.0.0-20231204082500-b238be45521e/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
 github.com/Dparty/restaurant-services v0.0.0-20231204082753-24fa7e2269c4 h1:3H1yHXIgqMNm8Gu4YPenDwmCJuE6JWav2Inq7nhR078=
 github.com/Dparty/restaurant-services v0.0.0-20231204082753-24fa7e2269c4/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
+github.com/Dparty/restaurant-services v0.0.0-20231204085221-daa790210307 h1:thlVqlCiBm960MBBkVdgJNxZqPHvhskEcgv3s5LekPA=
+github.com/Dparty/restaurant-services v0.0.0-20231204085221-daa790210307/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/appleboy/gofight/v2 v2.1.2 h1:VOy3jow4vIK8BRQJoC/I9muxyYlJ2yb9ht2hZoS3rf4=
 github.com/appleboy/gofight/v2 v2.1.2/go.mod h1:frW+U1QZEdDgixycTj4CygQ48yLTUhplt43+Wczp3rw=

@@ -4,6 +4,7 @@ import (
 	authServices "github.com/Dparty/auth-services"
 	"github.com/Dparty/common/server"
 	restaurantServices "github.com/Dparty/restaurant-services"
+	"github.com/Dparty/restaurant-services/pubsub"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,6 +14,7 @@ var printerService = restaurantServices.GetPrinterService()
 var itemService = restaurantServices.GetItemService()
 var tableService = restaurantServices.GetTableService()
 var billService = restaurantServices.GetBillService()
+var pb = pubsub.GetPubSub()
 
 func Init(addr ...string) {
 	router := gin.Default()

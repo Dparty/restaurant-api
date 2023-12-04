@@ -4,10 +4,10 @@ go 1.21.1
 
 require (
 	github.com/Depado/ginprom v1.8.0
-	github.com/Dparty/auth-services v0.0.0-20231122114933-7ed998e170ad
-	github.com/Dparty/common v0.0.0-20231204061145-f9e546f5f62b
+	github.com/Dparty/auth-services v0.0.0-20231204091948-1345935cb765
+	github.com/Dparty/common v0.0.0-20231204091534-90b252024099
 	github.com/Dparty/dao v0.0.0-20231202145534-621faedcc415
-	github.com/Dparty/restaurant-services v0.0.0-20231204082753-24fa7e2269c4
+	github.com/Dparty/restaurant-services v0.0.0-20231204085221-daa790210307
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd
 	github.com/gin-gonic/gin v1.9.1
 	github.com/spf13/viper v1.17.0
