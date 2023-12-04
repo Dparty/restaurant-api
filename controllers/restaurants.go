@@ -10,6 +10,7 @@ import (
 	restaurantModels "github.com/Dparty/restaurant-services"
 	"github.com/chenyunda218/golambda"
 	"github.com/gin-gonic/gin"
+	"github.com/gorilla/websocket"
 )
 
 var DEFAULT_OFFSET = 10
@@ -427,4 +428,16 @@ func (RestaurantApi) ListBills(ctx *gin.Context) {
 		func(_ int, bill restaurantModels.Bill) apiModels.Bill {
 			return BillBackward(bill)
 		}))
+}
+
+func (RestaurantApi) BillSubscription(c *gin.Context) {
+	conn, err := upgrader.Upgrade(c.Writer, c.Request, nil)
+	if err != nil {
+		return
+	}
+	defer conn.Close()
+	for {
+		conn.WriteMessage(websocket.TextMessage, []byte("Hello, WebSocket!"))
+		time.Sleep(time.Second)
+	}
 }
