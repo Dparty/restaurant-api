@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"github.com/Depado/ginprom"
 	authServices "github.com/Dparty/auth-services"
 	"github.com/Dparty/common/server"
 	restaurantServices "github.com/Dparty/restaurant-services"
@@ -19,12 +18,7 @@ func Init(addr ...string) {
 	router := gin.Default()
 	var restaurantApi RestaurantApi
 	var billApi BillApi
-	p := ginprom.New(
-		ginprom.Engine(router),
-		ginprom.Subsystem("gin"),
-		ginprom.Path("/metrics"),
-	)
-	router.Use(p.Instrument())
+	server.MetricsMiddleware(router)
 	router.Use(authService.Auth())
 	router.Use(server.CorsMiddleware())
 	router.POST("/sessions", CreateSession)

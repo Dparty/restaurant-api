@@ -3,9 +3,9 @@ module github.com/Dparty/restaurant-api
 go 1.21.1
 
 require (
-	github.com/Depado/ginprom v1.7.11
+	github.com/Depado/ginprom v1.8.0
 	github.com/Dparty/auth-services v0.0.0-20231122114933-7ed998e170ad
-	github.com/Dparty/common v0.0.0-20231122030430-eceab0964974
+	github.com/Dparty/common v0.0.0-20231204061145-f9e546f5f62b
 	github.com/Dparty/dao v0.0.0-20231202145534-621faedcc415
 	github.com/Dparty/restaurant-services v0.0.0-20231203021033-8040f6c5cd8e
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd

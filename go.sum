@@ -40,6 +40,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/Depado/ginprom v1.7.11 h1:qOhxW/NJZkNkkG4TQrzAZklX8SUTjTfLA73zIUNIpww=
 github.com/Depado/ginprom v1.7.11/go.mod h1:49mxL3NTQwDrhpDbY4V1mAIB3us9B+b2hP1+ph+Sla8=
+github.com/Depado/ginprom v1.8.0 h1:zaaibRLNI1dMiiuj1MKzatm8qrcHzikMlCc1anqOdyo=
+github.com/Depado/ginprom v1.8.0/go.mod h1:XBaKzeNBqPF4vxJpNLincSQZeMDnZp1tIbU0FU0UKgg=
 github.com/Dparty/auth-services v0.0.0-20231116075426-0f8f6f33bab5 h1:7YBLVZLkqDBZoHlb8j5suG/OBiGMsrLkh8YQaQOCcSY=
 github.com/Dparty/auth-services v0.0.0-20231116075426-0f8f6f33bab5/go.mod h1:wGsvQXbxU5JNnl09j+UebA3idS5Q7XUplv3LI69CXdc=
 github.com/Dparty/auth-services v0.0.0-20231122114933-7ed998e170ad h1:a6ktvq08wDpBA5OvJhTFlGvgnP1oRpEYGqAEKVMLPO8=
@@ -54,6 +56,8 @@ github.com/Dparty/common v0.0.0-20231121092828-9e5b601fc81d h1:Ix5Yrowy5mCtvkXfB
 github.com/Dparty/common v0.0.0-20231121092828-9e5b601fc81d/go.mod h1:0MkPaoUno+tNT4QvJ1cQr5n8O7ZNLAC28H8Okxobi+8=
 github.com/Dparty/common v0.0.0-20231122030430-eceab0964974 h1:2W3/Q5hcj+ats3r6vCOlvBRYXiZZtgRgHNBEdSGLJUM=
 github.com/Dparty/common v0.0.0-20231122030430-eceab0964974/go.mod h1:0MkPaoUno+tNT4QvJ1cQr5n8O7ZNLAC28H8Okxobi+8=
+github.com/Dparty/common v0.0.0-20231204061145-f9e546f5f62b h1:ZpiT1J0reGFy5o0hPLPspGblHYeAGDOwjVBiK2fsP+U=
+github.com/Dparty/common v0.0.0-20231204061145-f9e546f5f62b/go.mod h1:EWX/G93OLrM4VZ48K3ckvOMMGgTjdWa9gzCyJLS1DRw=
 github.com/Dparty/dao v0.0.0-20231116081744-7fbf7dca6a5a h1:waXuK32f5JH4PKQzAcVQGSMsU17K1G9m/r8tVvWLgj4=
 github.com/Dparty/dao v0.0.0-20231116081744-7fbf7dca6a5a/go.mod h1:U0mQzO6oIFgcRXO44tspV3IJKT5xI1QONSYxMqx/gH4=
 github.com/Dparty/dao v0.0.0-20231118010323-e0937a4dc07b h1:+4dDYFYfn6zo2kvhU2F5bsj2xGMRS7dhvLawyN7lPSM=
