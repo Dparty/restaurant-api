@@ -129,19 +129,24 @@ func (BillApi) BillSubscription(ctx *gin.Context) {
 			}
 		}
 	}()
+	c := pb.Subscribe("restaurant-" + restaurantId)
+	ch := c.Channel()
 	for {
 		select {
-		case _, ok := <-mess:
-			if !ok {
-				return
-			}
-		case <-time.After(time.Second * 3):
+		case <-ch:
 			j, _ := json.Marshal(
 				golambda.Map(billService.ListBills(utils.StringToUint(restaurantId), _tableId, _status, _startAt, _endAt),
 					func(_ int, bill restaurantModels.Bill) apiModels.Bill {
 						return BillBackward(bill)
 					}))
 			conn.WriteMessage(websocket.TextMessage, j)
+		case _, ok := <-mess:
+			if !ok {
+				c.Close()
+				return
+			}
+		case <-time.After(time.Second * 3):
+			pb.Publish("restaurant-"+restaurantId, "polling")
 		}
 	}
 }

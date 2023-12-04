@@ -7,7 +7,7 @@ require (
 	github.com/Dparty/auth-services v0.0.0-20231204091948-1345935cb765
 	github.com/Dparty/common v0.0.0-20231204091534-90b252024099
 	github.com/Dparty/dao v0.0.0-20231202145534-621faedcc415
-	github.com/Dparty/restaurant-services v0.0.0-20231204085221-daa790210307
+	github.com/Dparty/restaurant-services v0.0.0-20231204095725-7d0350792e04
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd
 	github.com/gin-gonic/gin v1.9.1
 	github.com/spf13/viper v1.17.0

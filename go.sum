@@ -186,6 +186,16 @@ github.com/Dparty/restaurant-services v0.0.0-20231204082753-24fa7e2269c4 h1:3H1y
 github.com/Dparty/restaurant-services v0.0.0-20231204082753-24fa7e2269c4/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
 github.com/Dparty/restaurant-services v0.0.0-20231204085221-daa790210307 h1:thlVqlCiBm960MBBkVdgJNxZqPHvhskEcgv3s5LekPA=
 github.com/Dparty/restaurant-services v0.0.0-20231204085221-daa790210307/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
+github.com/Dparty/restaurant-services v0.0.0-20231204093816-c71d47bb4878 h1:2xmtWs/BDEUxe3BY1PVYwt164ETgq3ZImXE3kz/Eyxc=
+github.com/Dparty/restaurant-services v0.0.0-20231204093816-c71d47bb4878/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
+github.com/Dparty/restaurant-services v0.0.0-20231204094632-584d1b15b142 h1:N/j1LYMM2Cgx8KqoIJWK9bsNZ9Yo8ODNyxdBVvujdvA=
+github.com/Dparty/restaurant-services v0.0.0-20231204094632-584d1b15b142/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
+github.com/Dparty/restaurant-services v0.0.0-20231204094842-89eab8373946 h1:BRK3HEP1FG2RHFQrXodo7cDoWYHLofAD7cL25zLK8QI=
+github.com/Dparty/restaurant-services v0.0.0-20231204094842-89eab8373946/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
+github.com/Dparty/restaurant-services v0.0.0-20231204095316-6a9c33612faf h1:fEOisN4u9ZnXdeRVujEz5DyTs6ipdEYAmluqpPiHrkY=
+github.com/Dparty/restaurant-services v0.0.0-20231204095316-6a9c33612faf/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
+github.com/Dparty/restaurant-services v0.0.0-20231204095725-7d0350792e04 h1:AZJR+SuPiiDkLddF1cQWwWJL9d3ilQyaj+wj8g+p0Sg=
+github.com/Dparty/restaurant-services v0.0.0-20231204095725-7d0350792e04/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/appleboy/gofight/v2 v2.1.2 h1:VOy3jow4vIK8BRQJoC/I9muxyYlJ2yb9ht2hZoS3rf4=
 github.com/appleboy/gofight/v2 v2.1.2/go.mod h1:frW+U1QZEdDgixycTj4CygQ48yLTUhplt43+Wczp3rw=
