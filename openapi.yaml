@@ -11,7 +11,6 @@ servers:
   - url: https://restaurant-uat.sum-foods.com
   - url: https://restaurant.sum-foods.com
 tags:
-  - name: Account
   - name: Restaurant
   - name: Bill
 paths:
@@ -85,6 +84,69 @@ paths:
       parameters:
         - $ref: '#/components/parameters/ID'
       operationId: DeleteRestaurant
+      responses:
+        '204':
+          description: 'Deleted'
+  /restaurants/{id}/offsets:
+    post:
+      tags:
+        - Restaurant
+      operationId: CreateOffset
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOffsetRequest'
+      responses:
+        '201':
+          description: 'Success created'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Offset'
+    get:
+      tags:
+        - Restaurant
+      operationId: ListOffsets
+      description: 'List offsets'
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Offset'
+  /offsets/{id}:
+    patch:
+      tags:
+        - Restaurant
+      operationId: UpdateOffset
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOffsetRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Offset'
+    delete:
+      tags:
+        - Restaurant
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      operationId: DeleteOffset
       responses:
         '204':
           description: 'Deleted'
@@ -813,6 +875,31 @@ components:
         - label
         - extra
       properties:
+        label:
+          type: string
+        extra:
+          type: integer
+          format: int64
+    CreateOffsetRequest:
+      type: object
+      required:
+        - label
+        - offset
+      properties:
+        label:
+          type: string
+        offset:
+          type: integer
+          format: int64
+    Offset:
+      type: object
+      required:
+        - id
+        - label
+        - offset
+      properties:
+        id:
+          type: string
         label:
           type: string
         extra:

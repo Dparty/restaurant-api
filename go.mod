@@ -3,17 +3,17 @@ module github.com/Dparty/restaurant-api
 go 1.21.1
 
 require (
-	github.com/Depado/ginprom v1.8.0
 	github.com/Dparty/auth-services v0.0.0-20231204091948-1345935cb765
 	github.com/Dparty/common v0.0.0-20231205012458-6ad6a1e44b5d
 	github.com/Dparty/dao v0.0.0-20231202145534-621faedcc415
 	github.com/Dparty/restaurant-services v0.0.0-20231205062245-21ef5a794023
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd
 	github.com/gin-gonic/gin v1.9.1
-	github.com/spf13/viper v1.17.0
+	github.com/gorilla/websocket v1.5.1
 )
 
 require (
+	github.com/Depado/ginprom v1.8.0 // indirect
 	github.com/Dparty/feieyun v0.0.0-20231115064000-4dba3ee5487c // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bwmarrin/snowflake v0.3.0 // indirect
@@ -33,7 +33,6 @@ require (
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/gorilla/websocket v1.5.1 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
@@ -59,6 +58,7 @@ require (
 	github.com/spf13/afero v1.10.0 // indirect
 	github.com/spf13/cast v1.5.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/spf13/viper v1.17.0 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	github.com/tencentyun/cos-go-sdk-v5 v0.7.45 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
