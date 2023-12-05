@@ -64,6 +64,8 @@ github.com/Dparty/common v0.0.0-20231204061145-f9e546f5f62b h1:ZpiT1J0reGFy5o0hP
 github.com/Dparty/common v0.0.0-20231204061145-f9e546f5f62b/go.mod h1:EWX/G93OLrM4VZ48K3ckvOMMGgTjdWa9gzCyJLS1DRw=
 github.com/Dparty/common v0.0.0-20231204091534-90b252024099 h1:1wSxbc2lMMYntkuVsm32WVa0KcgoQg8IKoR6tM2jUgQ=
 github.com/Dparty/common v0.0.0-20231204091534-90b252024099/go.mod h1:EWX/G93OLrM4VZ48K3ckvOMMGgTjdWa9gzCyJLS1DRw=
+github.com/Dparty/common v0.0.0-20231205012458-6ad6a1e44b5d h1:Sj2xwSfPRIYZWdnzp9F6IGt/EWJUzBEkSIDkor6/4KY=
+github.com/Dparty/common v0.0.0-20231205012458-6ad6a1e44b5d/go.mod h1:YWreOsW0pkfpIxFeqpYjXE0hmVZ5iW3SnJOvuLGuA/4=
 github.com/Dparty/dao v0.0.0-20231116081744-7fbf7dca6a5a h1:waXuK32f5JH4PKQzAcVQGSMsU17K1G9m/r8tVvWLgj4=
 github.com/Dparty/dao v0.0.0-20231116081744-7fbf7dca6a5a/go.mod h1:U0mQzO6oIFgcRXO44tspV3IJKT5xI1QONSYxMqx/gH4=
 github.com/Dparty/dao v0.0.0-20231118010323-e0937a4dc07b h1:+4dDYFYfn6zo2kvhU2F5bsj2xGMRS7dhvLawyN7lPSM=
@@ -196,6 +198,10 @@ github.com/Dparty/restaurant-services v0.0.0-20231204095316-6a9c33612faf h1:fEOi
 github.com/Dparty/restaurant-services v0.0.0-20231204095316-6a9c33612faf/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
 github.com/Dparty/restaurant-services v0.0.0-20231204095725-7d0350792e04 h1:AZJR+SuPiiDkLddF1cQWwWJL9d3ilQyaj+wj8g+p0Sg=
 github.com/Dparty/restaurant-services v0.0.0-20231204095725-7d0350792e04/go.mod h1:w+S2QlLHLqXaOmC4WLtxZ+/tQ+U297RqWIy2Tmj3eR0=
+github.com/Dparty/restaurant-services v0.0.0-20231205012607-9272eb0fd9a3 h1:gx5+QG9I4ICLOYEDyUJ+V1/GcU+1ateaIAQ1fORKNHM=
+github.com/Dparty/restaurant-services v0.0.0-20231205012607-9272eb0fd9a3/go.mod h1:8QqAkYDcb2LnsQa9Sy+RmJSQ8eIDuzVlsQtC9M5UMKE=
+github.com/Dparty/restaurant-services v0.0.0-20231205061300-34c7d4cd3457 h1:xnFOroPjUCiiANYJ3y4xp1tk2xeGF5CSe3+wQOMTOAM=
+github.com/Dparty/restaurant-services v0.0.0-20231205061300-34c7d4cd3457/go.mod h1:8QqAkYDcb2LnsQa9Sy+RmJSQ8eIDuzVlsQtC9M5UMKE=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/appleboy/gofight/v2 v2.1.2 h1:VOy3jow4vIK8BRQJoC/I9muxyYlJ2yb9ht2hZoS3rf4=
 github.com/appleboy/gofight/v2 v2.1.2/go.mod h1:frW+U1QZEdDgixycTj4CygQ48yLTUhplt43+Wczp3rw=

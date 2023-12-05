@@ -14,8 +14,7 @@ import (
 	"github.com/gorilla/websocket"
 )
 
-type BillApi struct {
-}
+type BillApi struct{}
 
 func (BillApi) GetBill(ctx *gin.Context) {
 	account := getAccount(ctx)
@@ -120,6 +119,14 @@ func (BillApi) BillSubscription(ctx *gin.Context) {
 	}
 	defer conn.Close()
 	mess := make(chan string)
+	var getBills = func() {
+		j, _ := json.Marshal(
+			golambda.Map(billService.ListBills(utils.StringToUint(restaurantId), _tableId, _status, _startAt, _endAt),
+				func(_ int, bill restaurantModels.Bill) apiModels.Bill {
+					return BillBackward(bill)
+				}))
+		conn.WriteMessage(websocket.TextMessage, j)
+	}
 	go func() {
 		for {
 			_, _, err := conn.ReadMessage()
@@ -134,12 +141,7 @@ func (BillApi) BillSubscription(ctx *gin.Context) {
 	for {
 		select {
 		case <-ch:
-			j, _ := json.Marshal(
-				golambda.Map(billService.ListBills(utils.StringToUint(restaurantId), _tableId, _status, _startAt, _endAt),
-					func(_ int, bill restaurantModels.Bill) apiModels.Bill {
-						return BillBackward(bill)
-					}))
-			conn.WriteMessage(websocket.TextMessage, j)
+			getBills()
 		case _, ok := <-mess:
 			if !ok {
 				c.Close()

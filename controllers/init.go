@@ -2,9 +2,9 @@ package controllers
 
 import (
 	authServices "github.com/Dparty/auth-services"
+	"github.com/Dparty/common/pubsub"
 	"github.com/Dparty/common/server"
 	restaurantServices "github.com/Dparty/restaurant-services"
-	"github.com/Dparty/restaurant-services/pubsub"
 	"github.com/gin-gonic/gin"
 )
 
