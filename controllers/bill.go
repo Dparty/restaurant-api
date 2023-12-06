@@ -127,6 +127,7 @@ func (BillApi) BillSubscription(ctx *gin.Context) {
 				}))
 		conn.WriteMessage(websocket.TextMessage, j)
 	}
+	getBills()
 	go func() {
 		for {
 			_, _, err := conn.ReadMessage()
