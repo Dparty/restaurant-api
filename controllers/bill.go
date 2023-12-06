@@ -148,7 +148,7 @@ func (BillApi) BillSubscription(ctx *gin.Context) {
 				return
 			}
 		case <-time.After(time.Second * 3):
-			pb.Publish("restaurant-"+restaurantId, "polling")
+			getBills()
 		}
 	}
 }
