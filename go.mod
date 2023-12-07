@@ -6,7 +6,7 @@ require (
 	github.com/Dparty/auth-services v0.0.0-20231204091948-1345935cb765
 	github.com/Dparty/common v0.0.0-20231205012458-6ad6a1e44b5d
 	github.com/Dparty/dao v0.0.0-20231207131735-ce06197032dc
-	github.com/Dparty/restaurant-services v0.0.0-20231207131807-eafa2068d8d3
+	github.com/Dparty/restaurant-services v0.0.0-20231207141056-e9ff0a27aa89
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd
 	github.com/gin-gonic/gin v1.9.1
 	github.com/gorilla/websocket v1.5.1
