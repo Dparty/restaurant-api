@@ -52,6 +52,10 @@ github.com/Dparty/restaurant-services v0.0.0-20231206122105-bde0f2baa934 h1:SuOx
 github.com/Dparty/restaurant-services v0.0.0-20231206122105-bde0f2baa934/go.mod h1:8QqAkYDcb2LnsQa9Sy+RmJSQ8eIDuzVlsQtC9M5UMKE=
 github.com/Dparty/restaurant-services v0.0.0-20231206123824-40ce28b53104 h1:5u4cRwkkfQvYRSw5t/AUM2ZhWf/KEpPjBdIl4CVVh1c=
 github.com/Dparty/restaurant-services v0.0.0-20231206123824-40ce28b53104/go.mod h1:8QqAkYDcb2LnsQa9Sy+RmJSQ8eIDuzVlsQtC9M5UMKE=
+github.com/Dparty/restaurant-services v0.0.0-20231207130329-1417c98e109e h1:rJiorWsBlqruOg6dFdMBVqEz4Psjn2C43bHJPqiIM/w=
+github.com/Dparty/restaurant-services v0.0.0-20231207130329-1417c98e109e/go.mod h1:8QqAkYDcb2LnsQa9Sy+RmJSQ8eIDuzVlsQtC9M5UMKE=
+github.com/Dparty/restaurant-services v0.0.0-20231207130822-42fabdde6314 h1:Yaal2IUGRjbC2W7HZh9BBgexABR3eY1omfGfMbXTBQU=
+github.com/Dparty/restaurant-services v0.0.0-20231207130822-42fabdde6314/go.mod h1:8QqAkYDcb2LnsQa9Sy+RmJSQ8eIDuzVlsQtC9M5UMKE=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/appleboy/gofight/v2 v2.1.2 h1:VOy3jow4vIK8BRQJoC/I9muxyYlJ2yb9ht2hZoS3rf4=
 github.com/appleboy/gofight/v2 v2.1.2/go.mod h1:frW+U1QZEdDgixycTj4CygQ48yLTUhplt43+Wczp3rw=
