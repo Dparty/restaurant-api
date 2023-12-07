@@ -402,7 +402,7 @@ paths:
         - in: query
           name: status
           schema:
-            type: string
+            $ref: '#/components/schemas/BillStatus'
         - in: query
           name: startAt
           schema:
