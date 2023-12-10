@@ -383,3 +383,40 @@ func (RestaurantApi) UploadItemCover(ctx *gin.Context) {
 		"url": url,
 	})
 }
+
+func (RestaurantApi) CreateDiscount(ctx *gin.Context) {
+	account := getAccount(ctx)
+	if account == nil {
+		return
+	}
+	var request apiModels.CreateDiscountRequest
+	ctx.ShouldBindJSON(&request)
+	restaurant, err := restaurantService.GetRestaurant(utils.StringToUint(ctx.Param("id")))
+	if err != nil {
+		fault.GinHandler(ctx, fault.ErrNotFound)
+		return
+	}
+	if !account.Own(&restaurant) {
+		fault.GinHandler(ctx, fault.ErrUnauthorized)
+		return
+	}
+
+	discount := restaurant.CreateDiscount(request.Label, request.Offset)
+	if err != nil {
+		fault.GinHandler(ctx, err)
+		return
+	}
+	ctx.JSON(http.StatusCreated, DiscountBackward(discount))
+}
+
+func (RestaurantApi) ListDiscount(ctx *gin.Context) {
+	restaurant, err := restaurantService.GetRestaurant(utils.StringToUint(ctx.Param("id")))
+	if err != nil {
+		fault.GinHandler(ctx, fault.ErrNotFound)
+		return
+	}
+	ctx.JSON(http.StatusOK, golambda.Map(restaurant.Discounts(),
+		func(_ int, discount restaurantModels.Discount) apiModels.Discount {
+			return DiscountBackward(discount)
+		}))
+}

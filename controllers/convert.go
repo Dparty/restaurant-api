@@ -99,3 +99,11 @@ func BillBackward(bill serviceModels.Bill) apiModels.Bill {
 		}),
 	}
 }
+
+func DiscountBackward(discount serviceModels.Discount) apiModels.Discount {
+	return apiModels.Discount{
+		Id:     utils.UintToString(discount.ID()),
+		Label:  discount.Entity().Label,
+		Offset: discount.Entity().Offset,
+	}
+}

@@ -13,6 +13,7 @@ servers:
 tags:
   - name: Restaurant
   - name: Bill
+  - name: Discount
 paths:
   /restaurants:
     post:
@@ -87,30 +88,30 @@ paths:
       responses:
         '204':
           description: 'Deleted'
-  /restaurants/{id}/offsets:
+  /restaurants/{id}/discounts:
     post:
       tags:
         - Restaurant
-      operationId: CreateOffset
+      operationId: CreateDiscount
       parameters:
         - $ref: '#/components/parameters/ID'
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateOffsetRequest'
+              $ref: '#/components/schemas/CreateDiscountRequest'
       responses:
         '201':
           description: 'Success created'
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Offset'
+                $ref: '#/components/schemas/Discount'
     get:
       tags:
         - Restaurant
-      operationId: ListOffsets
-      description: 'List offsets'
+      operationId: ListDiscount
+      description: 'List discount'
       parameters:
         - $ref: '#/components/parameters/ID'
       responses:
@@ -121,35 +122,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Offset'
-  /offsets/{id}:
-    patch:
-      tags:
-        - Restaurant
-      operationId: UpdateOffset
-      parameters:
-        - $ref: '#/components/parameters/ID'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateOffsetRequest'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Offset'
-    delete:
-      tags:
-        - Restaurant
-      parameters:
-        - $ref: '#/components/parameters/ID'
-      operationId: DeleteOffset
-      responses:
-        '204':
-          description: 'Deleted'
+                  $ref: '#/components/schemas/Discount'
   /restaurants/{id}/items:
     post:
       tags:
@@ -498,6 +471,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Bill'
+  /discounts/{id}:
+    patch:
+      tags:
+        - Restaurant
+      operationId: UpdateDiscount
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDiscountRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Discount'
+    delete:
+      tags:
+        - Restaurant
+      parameters:
+        - $ref: '#/components/parameters/ID'
+      operationId: DeleteDiscount
+      responses:
+        '204':
+          description: 'Deleted'
 components:
   schemas:
     RestaurantsConfiguration:
@@ -880,7 +881,7 @@ components:
         extra:
           type: integer
           format: int64
-    CreateOffsetRequest:
+    CreateDiscountRequest:
       type: object
       required:
         - label
@@ -891,7 +892,7 @@ components:
         offset:
           type: integer
           format: int64
-    Offset:
+    Discount:
       type: object
       required:
         - id

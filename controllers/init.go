@@ -14,12 +14,14 @@ var printerService = restaurantServices.GetPrinterService()
 var itemService = restaurantServices.GetItemService()
 var tableService = restaurantServices.GetTableService()
 var billService = restaurantServices.GetBillService()
+var discountService = restaurantServices.GetDiscountService()
 var pb = pubsub.GetPubSub()
 
 func Init(addr ...string) {
 	router := gin.Default()
 	var restaurantApi RestaurantApi
 	var billApi BillApi
+	var discountApi DiscountApi
 	server.MetricsMiddleware(router)
 	router.Use(authService.Auth())
 	router.Use(server.CorsMiddleware())
@@ -33,6 +35,8 @@ func Init(addr ...string) {
 	router.POST("/restaurants/:id/tables", restaurantApi.CreateTable)
 	router.POST("/restaurants/:id/printers", restaurantApi.CreatePrinter)
 	router.GET("/restaurants/:id/printers", restaurantApi.ListPrinter)
+	router.POST("/restaurants/:id/discounts", restaurantApi.CreateDiscount)
+	router.GET("/restaurants/:id/discounts", restaurantApi.ListDiscount)
 	router.DELETE("/printers/:id", restaurantApi.DeletePrinter)
 	router.PUT("/printers/:id", restaurantApi.UpdatePrinter)
 	router.DELETE("/items/:id", restaurantApi.DeleteItem)
@@ -47,5 +51,6 @@ func Init(addr ...string) {
 	router.PATCH("/bills/:id/items/cancel", billApi.CancelItems)
 	router.POST("/bills/print", restaurantApi.PrintBills)
 	router.POST("/bills/set", restaurantApi.SetBills)
+	router.DELETE("/discounts/:id", discountApi.DeleteDiscount)
 	router.Run(addr...)
 }

@@ -46,10 +46,16 @@ github.com/Dparty/common v0.0.0-20231205012458-6ad6a1e44b5d h1:Sj2xwSfPRIYZWdnzp
 github.com/Dparty/common v0.0.0-20231205012458-6ad6a1e44b5d/go.mod h1:YWreOsW0pkfpIxFeqpYjXE0hmVZ5iW3SnJOvuLGuA/4=
 github.com/Dparty/dao v0.0.0-20231207131735-ce06197032dc h1:kIK1MzWoWJ9Xb0n4yrfZWa2BhEpcrku8HMdGMSdLRCs=
 github.com/Dparty/dao v0.0.0-20231207131735-ce06197032dc/go.mod h1:DFs9wMtwQMyP+9CvLA4/Hi7jdez2+fXX/1u/bVupLe0=
+github.com/Dparty/dao v0.0.0-20231210132515-1e31e249e5d6 h1:pKIs43W4u4wOunGUma0q/VghSoRwkVX9nd40FT4xheo=
+github.com/Dparty/dao v0.0.0-20231210132515-1e31e249e5d6/go.mod h1:DFs9wMtwQMyP+9CvLA4/Hi7jdez2+fXX/1u/bVupLe0=
 github.com/Dparty/feieyun v0.0.0-20231115064000-4dba3ee5487c h1:mOu5uuu7nL4GnxE3pmtUnUzvzG+OOC6vImisPYF1aPA=
 github.com/Dparty/feieyun v0.0.0-20231115064000-4dba3ee5487c/go.mod h1:MRJeY/NuyVojLTIm2DymDcP4ryYPqcESMOdYUCoXSjA=
 github.com/Dparty/restaurant-services v0.0.0-20231207141056-e9ff0a27aa89 h1:kp9fj9t3iMd5S1Ea7OYqUP2VJY1nXP5iXlHO2rDm0Jw=
 github.com/Dparty/restaurant-services v0.0.0-20231207141056-e9ff0a27aa89/go.mod h1:YMkBZXXZXQpKwp0HUIAnxNveGWg1spjLzaSpgOa/dP8=
+github.com/Dparty/restaurant-services v0.0.0-20231210132934-7a7fc5d446b8 h1:Pq9ePQl+Zgu9Sy/zOAhJVcthvuK7/u/zqblKcSayeWc=
+github.com/Dparty/restaurant-services v0.0.0-20231210132934-7a7fc5d446b8/go.mod h1:SbaDE9nYylbuPvMHKx3ke4bV9pFp1jjGD+0DEzPvJY0=
+github.com/Dparty/restaurant-services v0.0.0-20231210134623-706401c7459f h1:iMKxyCIxqN6N+lmzldUHt9hpvTwnY4fwJfY98vsRrSk=
+github.com/Dparty/restaurant-services v0.0.0-20231210134623-706401c7459f/go.mod h1:SbaDE9nYylbuPvMHKx3ke4bV9pFp1jjGD+0DEzPvJY0=
 github.com/QcloudApi/qcloud_sign_golang v0.0.0-20141224014652-e4130a326409/go.mod h1:1pk82RBxDY/JZnPQrtqHlUFfCctgdorsd9M06fMynOM=
 github.com/appleboy/gofight/v2 v2.1.2 h1:VOy3jow4vIK8BRQJoC/I9muxyYlJ2yb9ht2hZoS3rf4=
 github.com/appleboy/gofight/v2 v2.1.2/go.mod h1:frW+U1QZEdDgixycTj4CygQ48yLTUhplt43+Wczp3rw=

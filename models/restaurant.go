@@ -121,3 +121,14 @@ type SetBillsRequest struct {
 	BillIdList []string `json:"billIdList"`
 	Status     string   `json:"status"`
 }
+
+type CreateDiscountRequest struct {
+	Label  string `json:"label"`
+	Offset int64  `json:"offset"`
+}
+
+type Discount struct {
+	Id     string `json:"id"`
+	Label  string `json:"label"`
+	Offset int64  `json:"offset"`
+}
