@@ -717,6 +717,9 @@ components:
           $ref: '#/components/schemas/BillStatus'
         tableLabel:
           type: string
+        createdAt:
+          type: integer
+          format: int64
         orders:
           type: array
           items:
@@ -904,6 +907,34 @@ components:
         label:
           type: string
         extra:
+          type: integer
+          format: int64
+    Menu:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        periods:
+          type: array
+          items: 
+            $ref: '#/components/schemas/Period'
+    Period:
+      description: '時間段, 0 ~ 86400'
+      type: object
+      required:
+        - startAt
+        - endAt
+      properties:
+        startAt:
+          maximum: 86400
+          minimum: 0
+          type: integer
+          format: int64
+        endAt:
+          maximum: 86400
+          minimum: 0
           type: integer
           format: int64
     Pagination:

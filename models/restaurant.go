@@ -101,6 +101,7 @@ type Bill struct {
 	PickUpCode int64   `json:"pickUpCode"`
 	Status     string  `json:"status"`
 	TableLabel string  `json:"tableLabel"`
+	CreatedAt  int64   `json:"createdAt"`
 }
 
 type PrintBillRequest struct {
