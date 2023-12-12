@@ -472,7 +472,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Bill'
   /discounts/{id}:
-    patch:
+    put:
       tags:
         - Restaurant
       operationId: UpdateDiscount
