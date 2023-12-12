@@ -92,6 +92,7 @@ func BillBackward(bill serviceModels.Bill) apiModels.Bill {
 		ID:         utils.UintToString(bill.ID()),
 		PickUpCode: bill.PickUpCode(),
 		CreatedAt:  bill.CreatedAt().Unix(),
+		Total:      bill.Total(),
 		Orders: golambda.Map(bill.Orders(), func(_ int, order model.Order) apiModels.Order {
 			return apiModels.Order{
 				Item:          ItemConvert(serviceModels.NewItem(order.Item)),

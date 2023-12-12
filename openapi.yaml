@@ -708,6 +708,9 @@ components:
         - id
         - status
         - orders
+        - createdAt
+        - offset
+        - total
       properties:
         id:
           type: string
@@ -718,6 +721,12 @@ components:
         tableLabel:
           type: string
         createdAt:
+          type: integer
+          format: int64
+        offset:
+          type: integer
+          format: int64
+        total:
           type: integer
           format: int64
         orders:
