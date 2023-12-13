@@ -53,7 +53,7 @@ func (BillApi) CreateOrder(ctx *gin.Context) {
 	if len(createBillRequest.Specifications) == 0 {
 		ctx.JSON(http.StatusBadRequest, gin.H{
 			"message": "No Specifications",
-			"code":    "70001",
+			"code":    "80001",
 		})
 		return
 	}
