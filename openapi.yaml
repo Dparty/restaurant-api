@@ -728,7 +728,8 @@ components:
           type: integer
           format: int64
         pickUpcode:
-          type: string
+          type: integer
+          format: int64
         orders:
           type: array
           items:
