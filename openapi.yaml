@@ -669,7 +669,7 @@ components:
       properties:
         item:
           $ref: '#/components/schemas/Item'
-        options:
+        specification:
           type: array
           items:
             $ref: '#/components/schemas/Pair'
