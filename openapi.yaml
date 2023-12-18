@@ -727,6 +727,8 @@ components:
         total:
           type: integer
           format: int64
+        pickUpcode:
+          type: string
         orders:
           type: array
           items:
