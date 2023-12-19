@@ -23,6 +23,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          build-args: |
+            TOKEN=${{ secrets.GITHUB }}
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ vars.DOCKER_NAME }}:latest
       - name: Update docker
