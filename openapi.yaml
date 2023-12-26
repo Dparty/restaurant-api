@@ -638,17 +638,9 @@ components:
       type: object
       required:
         - label
-        - x
-        - y
       properties:
         label:
           type: string
-        x:
-          type: integer
-          format: int64
-        y:
-          type: integer
-          format: int64
     Specification:
       type: object
       required:

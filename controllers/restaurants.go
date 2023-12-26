@@ -156,7 +156,7 @@ func (RestaurantApi) CreateTable(ctx *gin.Context) {
 	}
 	var request apiModels.PutTableRequest
 	ctx.ShouldBindJSON(&request)
-	table, err := restaurant.CreateTable(request.Label, request.X, request.Y)
+	table, err := restaurant.CreateTable(request.Label)
 	if err != nil {
 		fault.GinHandler(ctx, err)
 		return
