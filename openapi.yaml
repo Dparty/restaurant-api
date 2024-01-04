@@ -13,7 +13,6 @@ servers:
 tags:
   - name: Restaurant
   - name: Bill
-  - name: Discount
 paths:
   /restaurants:
     post:
