@@ -6,7 +6,7 @@ require (
 	github.com/Dparty/auth-services v0.0.0-20231204091948-1345935cb765
 	github.com/Dparty/common v0.0.0-20231227094807-cd1e09731671
 	github.com/Dparty/dao v0.0.0-20231219042415-d2011d37e81b
-	github.com/Dparty/restaurant-services v0.0.0-20231226113900-3257914e2cff
+	github.com/Dparty/restaurant-services v0.0.0-20240113160405-a0fbfef01824
 	github.com/chenyunda218/golambda v0.0.0-20230809035428-25245dc9a8bd
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-co-op/gocron/v2 v2.0.1
@@ -67,7 +67,6 @@ require (
 	github.com/tencentyun/cos-go-sdk-v5 v0.7.45 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
 	github.com/ugorji/go/codec v1.2.12 // indirect
-	go.uber.org/atomic v1.11.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/arch v0.7.0 // indirect
 	golang.org/x/crypto v0.18.0 // indirect
